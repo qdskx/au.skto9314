@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>歌单推荐</title>
+<link rel="stylesheet" href="/static/index/css/style.css">
+
+ <link rel="stylesheet" href="/static/mplayer/css/mplayer.css">
+
+
+</head>
+
+<!--头部开始-->
+    {include file="header"}
+<!--头部结束-->
+
+<body>
+<div class="bg_box">
+<div class="main">
+<div class="malbum">
+    {volist name="sel" id="val"}
+    <div class="data_cover"> <img src="{$val.pic}" alt=""></div>
+    <div class="data_cont"><h1>{$val.pname}</h1></div>
+    <div class="data_user"><a >&emsp;</a></div>
+    <div class="data_info">
+        <p>所属分类：{$type}</p>
+        <p>歌单热度：{$val.view_num}</p>
+        <p>发行公司：</p>
+        <p>歌曲风格：运动</p>
+        <p>发布时间：{$val.create_time|date='Y-m-d',###}</p>
+    </div>
+
+
+<div class="data_actions">
+<a href="/index/index/collectlist?pid={$val.pid}" class="play">收藏此歌单</a>
+    {/volist}
+<div class="bdsharebuttonbox bdshare-button-style1-32" data-bd-bind="1517485084064">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new
+ Date()/36e5)];</script>
+</div>
+
+
+<div class="data_layout">
+<div class="data_layout_main x5_player">
+<ul class="songlist_header">
+    <li class="songlist_header_name">　　歌曲</li>
+    <li class="songlist_header_author">歌手</li>
+    <li class="songlist_artist">热度</li>
+</ul>
+{if !empty($data)}
+{volist name="data" id="val"}
+<ul class="songlist_header list" id="song-1" did="313">
+    <li class="songlist_songname"><span>{$val.sid}</span>
+    <a href="/index/index/songplay?sid={$val.sid}">{$val.sname}</a>
+    </li>
+    <li class="songlist_header_author"><a href="#"  >{$val.singer}</a></li>
+    <li class="songlist_artist">{$val.view_num}</li>
+</ul>
+{/volist}
+{/if}
+</div>
+
+<div class="data_layout_other">
+    <h3 class="about_tit mt30">推荐歌单</h3>
+    <ul class="playlist_list">
+        {volist name="hot" id="val"}
+        <li>
+            <a href="/index/index/playlist?pid={$val.pid}">
+                <img src="{$val.pic}"><span class="name">{$val.pname}</span>
+            </a>
+        </li>
+        {/volist}
+    </ul>
+    <!-- <div class="ad mt30">300*250广告代码</div> -->
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+ <!--音乐歌词 start-->
+
+  <div class="mp" style="z-index:20;opacity: 0.8;">
+  <div class="mp-box">
+    <img src="" alt="music cover" class="mp-cover">
+    <div class="mp-info">
+      <p class="mp-name">燕归巢</p>
+      <p class="mp-singer">许嵩</p>
+      <p><span class="mp-time-current">00:00</span>/<span class="mp-time-all">00:00</span></p>
+    </div>
+    <div class="mp-btn">
+      <button class="mp-prev" title="上一首"></button>
+      <button class="mp-pause" title="播放"></button>
+      <button class="mp-next" title="下一首"></button>
+      <button class="mp-mode" title="播放模式"></button>
+      <div class="mp-vol">
+        <button class="mp-vol-img" title="静音"></button>
+        <div class="mp-vol-range" data-range_min="0" data-range_max="100" data-cur_min="80">
+          <div class="mp-vol-current"></div>
+          <div class="mp-vol-circle"></div>
+        </div>
+      </div>
+    </div>
+    <div class="mp-pro">
+      <div class="mp-pro-current"></div>
+    </div>
+    <div class="mp-menu">
+      <button class="mp-list-toggle"></button>
+      <button class="mp-lrc-toggle"></button>
+    </div>
+  </div>
+  <button class="mp-toggle">
+    <span class="mp-toggle-img"></span>
+  </button>
+  <div class="mp-lrc-box">
+    <ul class="mp-lrc"></ul>
+  </div>
+  <button class="mp-lrc-close"></button>
+  <div class="mp-list-box">
+    <ul class="mp-list-title"></ul>
+    <table class="mp-list-table">
+      <thead>
+        <tr>
+          <th>歌名</th>
+          <th>歌手</th>
+          <th>时长</th>
+        </tr>
+      </thead>
+      <tbody class="mp-list"></tbody>
+    </table>
+  </div>
+</div>
+
+
+<!--music js start-->
+<script src="http://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+<script src="/static/mplayer/js/mplayer.js"></script>
+<script src="/static/mplayer/js/mplayer-list.js"></script>
+<script src="/static/mplayer/js/mplayer-functions.js"></script>
+<script src="http://cdn.bootcss.com/jquery-nstslider/1.0.13/jquery.nstSlider.min.js"></script>
+<!--music js end-->
+
+<script>
+var modeText = ['顺序播放','单曲循环','随机播放','列表循环'];
+{if !empty($song)}
+{foreach $song as $value}
+    // var tmp = {
+    //   "name":"{$value['musicname']}",
+    //   "singer":"{$value['songer']}",
+    //   "img":"{$value['img']}",
+    //   "src":"{$value['url']}",
+    //   "lrc":"{$value['songword']}",
+    // };
+    var tmp = {
+      "name":"{$value['musicname']}",
+      "singer":"{$value['songer']}",
+      "img":"{$value['img']}",
+      "src":"{$value['url']}",
+      "lrc":"{$value['songword']}"
+    };
+    mplayer_song[0].push(tmp);
+{/foreach}
+
+
+{/if}
+var player = new MPlayer({
+  // 容器选择器名称
+  containerSelector: '.mp',
+  // 播放列表
+  songList: mplayer_song,
+  // 专辑图片错误时显示的图片
+  defaultImg: '/static/index/fengmian/wake.jpg',
+  // 自动播放
+  autoPlay: true,
+  // 播放模式(0->顺序播放,1->单曲循环,2->随机播放,3->列表循环(默认))
+  playMode:0,
+  playList:0,
+  playSong:0,
+  // 当前歌词距离顶部的距离
+  lrcTopPos: 34,
+  // 列表模板，用${变量名}$插入模板变量
+  listFormat: '<tr><td>${name}$</td><td>${singer}$</td><td>${time}$</td></tr>',
+  // 音量滑块改变事件名称
+  volSlideEventName:'change',
+  // 初始音量
+  defaultVolume:80
+}, function () {
+  // 绑定事件
+  this.on('afterInit', function () {
+    console.log('播放器初始化完成，正在准备播放');
+  }).on('beforePlay', function () {
+    var $this = this;
+    var song = $this.getCurrentSong(true);
+    var songName = song.name + ' - ' + song.singer;
+    console.log('即将播放'+songName+'，return false;可以取消播放');
+  }).on('timeUpdate', function () {
+    var $this = this;
+    console.log('当前歌词：' + $this.getLrc());
+  }).on('end', function () {
+    var $this = this;
+    var song = $this.getCurrentSong(true);
+    var songName = song.name + ' - ' + song.singer;
+    console.log(songName+'播放完毕，return false;可以取消播放下一曲');
+  }).on('mute', function () {
+    var status = this.getIsMuted() ? '已静音' : '未静音';
+    console.log('当前静音状态：' + status);
+  }).on('changeMode', function () {
+    var $this = this;
+    var mode = modeText[$this.getPlayMode()];
+    $this.dom.container.find('.mp-mode').attr('title',mode);
+    console.log('播放模式已切换为：' + mode);
+  });
+});
+setEffects(player);
+</script>
+  <!--音乐歌词end-->
+
+
+    <!--尾部开始-->
+    {include file="footer"}
+    <!--尾部结束-->
+
+<link href="/static/index/css/asynctips.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/static/index/js/asyncbox.js"></script>
+<script type="text/javascript" src="/static/index/js/bottom.js"></script>
+
+
+
+</body>
+</html>

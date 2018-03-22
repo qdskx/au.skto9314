@@ -1,0 +1,2930 @@
+[ 2018-02-22T00:01:46+08:00 ] ::1 ::1 GET /index/index/songplay?sid=8
+[ log ] au.skxto9314.com/index/index/songplay?sid=8 [运行时间：0.051007s][吞吐率：19.61req/s] [内存消耗：2,726.76kb] [文件加载：43]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'songplay',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songlist',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '8',
+)
+[ info ] [ RUN ] app\index\controller\Index->songplay[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010451s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_song` [ RunTime:0.001154s ]
+[ sql ] [ SQL ] SELECT `ispay` FROM `tp_song` WHERE  `sid` = 8 LIMIT 1 [ RunTime:0.000423s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  `sid` = 8 [ RunTime:0.000456s ]
+[ sql ] [ SQL ] UPDATE `tp_song`  SET `view_num`=view_num+1  WHERE  `sid` = 8 [ RunTime:0.002164s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` ORDER BY view_num desc LIMIT 5 [ RunTime:0.000449s ]
+[ error ] [42S02]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tp.tp_post' doesn't exist[D:\wamp64\www\php1714\au\thinkphp\library\think\db\connector\Mysql.php:60]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:01:52+08:00 ] ::1 ::1 GET /index/index/
+[ log ] au.skxto9314.com/index/index/ [运行时间：0.059982s][吞吐率：16.67req/s] [内存消耗：2,923.19kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\index.html [ array (
+  0 => 'result',
+  1 => 'lun',
+  2 => 'song1pic',
+  3 => 'song2pic',
+  4 => 'song3pic',
+  5 => 'song4pic',
+  6 => 'song1',
+  7 => 'song2',
+  8 => 'song3',
+  9 => 'song4',
+  10 => 'hotsheet',
+  11 => 'hotmv',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002033s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.000910s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = 'kaixuan' [ RunTime:0.000511s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_suf` [ RunTime:0.001684s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_suf` [ RunTime:0.000338s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_songtype` [ RunTime:0.001545s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000418s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000382s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000373s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000376s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_song` [ RunTime:0.000746s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  (  song_type=1 ) LIMIT 4 [ RunTime:0.000371s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  (  song_type=2 ) LIMIT 4 [ RunTime:0.000353s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  (  song_type=3 ) LIMIT 4 [ RunTime:0.000280s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  (  song_type=4 ) LIMIT 4 [ RunTime:0.000278s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_playlist` [ RunTime:0.001548s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_playlist` ORDER BY view_num desc LIMIT 4 [ RunTime:0.000242s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_mv` [ RunTime:0.001359s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_mv` ORDER BY view_num desc LIMIT 4 [ RunTime:0.000261s ]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:01:52+08:00 ] ::1 ::1 GET /uploads/20180201/0783a4ebd625e2a9a47a386a792e4149.jpg
+[ log ] au.skxto9314.com/uploads/20180201/0783a4ebd625e2a9a47a386a792e4149.jpg [运行时间：0.015905s][吞吐率：62.87req/s] [内存消耗：1,280.38kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180201',
+    2 => '0783a4ebd625e2a9a47a386a792e4149.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:01:52+08:00 ] ::1 ::1 GET /uploads/20180221/221359c4af80e2373ab9ca9de60601f8.jpg
+[ log ] au.skxto9314.com/uploads/20180221/221359c4af80e2373ab9ca9de60601f8.jpg [运行时间：0.020266s][吞吐率：49.34req/s] [内存消耗：1,281.01kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180221',
+    2 => '221359c4af80e2373ab9ca9de60601f8.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'if-none-match' => '"2471-565baf84e4526"',
+  'if-modified-since' => 'Wed, 21 Feb 2018 15:56:27 GMT',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:01:52+08:00 ] ::1 ::1 GET /static/index/images/bg.png
+[ log ] au.skxto9314.com/static/index/images/bg.png [运行时间：0.020597s][吞吐率：48.55req/s] [内存消耗：1,280.29kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/style3.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:01:52+08:00 ] ::1 ::1 GET /static/index/images/nav.png
+[ log ] au.skxto9314.com/static/index/images/nav.png [运行时间：0.018851s][吞吐率：53.05req/s] [内存消耗：1,280.29kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/style2.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:01:52+08:00 ] ::1 ::1 GET /static/index/images/bannerBtn.png
+[ log ] au.skxto9314.com/static/index/images/bannerBtn.png [运行时间：0.023505s][吞吐率：42.54req/s] [内存消耗：1,280.30kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/style3.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:01:57+08:00 ] ::1 ::1 GET /index/index/userinfo
+[ log ] au.skxto9314.com/index/index/userinfo [运行时间：0.045415s][吞吐率：22.02req/s] [内存消耗：2,855.68kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'userinfo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->userinfo[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\userinfo.html [ array (
+  0 => 'result',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002088s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.000689s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = 'kaixuan' [ RunTime:0.000340s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = 'kaixuan' [ RunTime:0.000416s ]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:01:57+08:00 ] ::1 ::1 GET /uploads/20180221/221359c4af80e2373ab9ca9de60601f8.jpg
+[ log ] au.skxto9314.com/uploads/20180221/221359c4af80e2373ab9ca9de60601f8.jpg [运行时间：0.017359s][吞吐率：57.61req/s] [内存消耗：1,280.40kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180221',
+    2 => '221359c4af80e2373ab9ca9de60601f8.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/userinfo',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:01:57+08:00 ] ::1 ::1 GET /static/index/images/nav.png
+[ log ] au.skxto9314.com/static/index/images/nav.png [运行时间：0.017071s][吞吐率：58.58req/s] [内存消耗：1,280.29kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/style.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:01:59+08:00 ] ::1 ::1 GET /index/user/loginout
+[ log ] au.skxto9314.com/index/user/loginout [运行时间：0.024317s][吞吐率：41.12req/s] [内存消耗：1,883.41kb] [文件加载：36]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'loginout',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/userinfo',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->loginout[ D:\wamp64\www\php1714\au\application\index\controller\User.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:00+08:00 ] ::1 ::1 GET /index/index/index.html
+[ log ] au.skxto9314.com/index/index/index.html [运行时间：0.055815s][吞吐率：17.92req/s] [内存消耗：2,715.82kb] [文件加载：42]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/user/loginout',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\index.html [ array (
+  0 => 'result',
+  1 => 'lun',
+  2 => 'song1pic',
+  3 => 'song2pic',
+  4 => 'song3pic',
+  5 => 'song4pic',
+  6 => 'song1',
+  7 => 'song2',
+  8 => 'song3',
+  9 => 'song4',
+  10 => 'hotsheet',
+  11 => 'hotmv',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010034s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.000865s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = '' [ RunTime:0.000455s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_suf` [ RunTime:0.001578s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_suf` [ RunTime:0.000294s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_songtype` [ RunTime:0.001467s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000230s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000245s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000214s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_song` [ RunTime:0.000531s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  (  song_type=1 ) LIMIT 4 [ RunTime:0.000311s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  (  song_type=2 ) LIMIT 4 [ RunTime:0.000321s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  (  song_type=3 ) LIMIT 4 [ RunTime:0.000308s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  (  song_type=4 ) LIMIT 4 [ RunTime:0.000285s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_playlist` [ RunTime:0.001491s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_playlist` ORDER BY view_num desc LIMIT 4 [ RunTime:0.000275s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_mv` [ RunTime:0.001468s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_mv` ORDER BY view_num desc LIMIT 4 [ RunTime:0.000280s ]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:00+08:00 ] ::1 ::1 GET /uploads/20180201/0783a4ebd625e2a9a47a386a792e4149.jpg
+[ log ] au.skxto9314.com/uploads/20180201/0783a4ebd625e2a9a47a386a792e4149.jpg [运行时间：0.014849s][吞吐率：67.34req/s] [内存消耗：1,280.40kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180201',
+    2 => '0783a4ebd625e2a9a47a386a792e4149.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:00+08:00 ] ::1 ::1 GET /static/index/images/bg.png
+[ log ] au.skxto9314.com/static/index/images/bg.png [运行时间：0.018981s][吞吐率：52.68req/s] [内存消耗：1,280.29kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/style3.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:00+08:00 ] ::1 ::1 GET /static/index/images/nav.png
+[ log ] au.skxto9314.com/static/index/images/nav.png [运行时间：0.019500s][吞吐率：51.28req/s] [内存消耗：1,280.29kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/style2.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:00+08:00 ] ::1 ::1 GET /static/index/images/bannerBtn.png
+[ log ] au.skxto9314.com/static/index/images/bannerBtn.png [运行时间：0.014106s][吞吐率：70.89req/s] [内存消耗：1,280.30kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/style3.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:01+08:00 ] ::1 ::1 GET /index/user/login
+[ log ] au.skxto9314.com/index/user/login [运行时间：0.025958s][吞吐率：38.52req/s] [内存消耗：1,817.59kb] [文件加载：34]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->login[ D:\wamp64\www\php1714\au\application\index\controller\User.php ]
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:02+08:00 ] ::1 ::1 GET /index/index/index.html
+[ log ] au.skxto9314.com/index/index/index.html [运行时间：0.060016s][吞吐率：16.66req/s] [内存消耗：2,715.82kb] [文件加载：42]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/user/loginout',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\index.html [ array (
+  0 => 'result',
+  1 => 'lun',
+  2 => 'song1pic',
+  3 => 'song2pic',
+  4 => 'song3pic',
+  5 => 'song4pic',
+  6 => 'song1',
+  7 => 'song2',
+  8 => 'song3',
+  9 => 'song4',
+  10 => 'hotsheet',
+  11 => 'hotmv',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010004s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.000815s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = '' [ RunTime:0.000376s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_suf` [ RunTime:0.001528s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_suf` [ RunTime:0.000298s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_songtype` [ RunTime:0.000556s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000411s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000362s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000287s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000289s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_song` [ RunTime:0.000656s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  (  song_type=1 ) LIMIT 4 [ RunTime:0.000352s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  (  song_type=2 ) LIMIT 4 [ RunTime:0.000342s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  (  song_type=3 ) LIMIT 4 [ RunTime:0.000298s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  (  song_type=4 ) LIMIT 4 [ RunTime:0.000328s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_playlist` [ RunTime:0.001697s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_playlist` ORDER BY view_num desc LIMIT 4 [ RunTime:0.000383s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_mv` [ RunTime:0.001545s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_mv` ORDER BY view_num desc LIMIT 4 [ RunTime:0.000363s ]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:03+08:00 ] ::1 ::1 GET /index/index/songsheet
+[ log ] au.skxto9314.com/index/index/songsheet [运行时间：0.043576s][吞吐率：22.95req/s] [内存消耗：2,859.67kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'songsheet',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->songsheet[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\songsheet.html [ array (
+  0 => 'type',
+  1 => 'sel',
+  2 => 'result',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002573s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_playtype` [ RunTime:0.001635s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_playtype` [ RunTime:0.000380s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_playlist` [ RunTime:0.001382s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_playlist` [ RunTime:0.000324s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.000620s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = '' [ RunTime:0.000466s ]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:03+08:00 ] ::1 ::1 GET /skin/qt_fb/images/loading.gif
+[ log ] au.skxto9314.com/skin/qt_fb/images/loading.gif [运行时间：0.013870s][吞吐率：72.10req/s] [内存消耗：1,280.29kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'skin',
+    1 => 'qt_fb',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songsheet',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:03+08:00 ] ::1 ::1 GET /static/index/images/ico_malbum.png
+[ log ] au.skxto9314.com/static/index/images/ico_malbum.png [运行时间：0.017636s][吞吐率：56.70req/s] [内存消耗：1,280.30kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/style.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:03+08:00 ] ::1 ::1 GET /static/index/images/nav.png
+[ log ] au.skxto9314.com/static/index/images/nav.png [运行时间：0.020745s][吞吐率：48.20req/s] [内存消耗：1,280.29kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/style.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:04+08:00 ] ::1 ::1 GET /index/index/playlist?pid=10
+[ log ] au.skxto9314.com/index/index/playlist?pid=10 [运行时间：0.061221s][吞吐率：16.33req/s] [内存消耗：2,880.45kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'playlist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songsheet',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+  'pid' => '10',
+)
+[ info ] [ RUN ] app\index\controller\Index->playlist[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\playlist.html [ array (
+  0 => 'sel',
+  1 => 'type',
+  2 => 'data',
+  3 => 'hot',
+  4 => 'result',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010240s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_playlist` [ RunTime:0.000787s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_playlist` WHERE  `pid` = 10 [ RunTime:0.000471s ]
+[ sql ] [ SQL ] UPDATE `tp_playlist`  SET `view_num`=view_num+1  WHERE  `pid` = 10 [ RunTime:0.000379s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_playtype` [ RunTime:0.000650s ]
+[ sql ] [ SQL ] SELECT `playname` FROM `tp_playtype` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000335s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_song_play` [ RunTime:0.001546s ]
+[ sql ] [ SQL ] SELECT `sid` FROM `tp_song_play` WHERE  `pid` = 10 [ RunTime:0.000285s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_song` [ RunTime:0.000700s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  `sid` = 10 [ RunTime:0.000499s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  `sid` = 7 [ RunTime:0.000394s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  `sid` = 9 [ RunTime:0.000353s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  `sid` = 6 [ RunTime:0.000402s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_playlist` ORDER BY view_num desc LIMIT 6 [ RunTime:0.000317s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.000583s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = '' [ RunTime:0.000364s ]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:04+08:00 ] ::1 ::1 GET /static/index/images/ico_user.png
+[ log ] au.skxto9314.com/static/index/images/ico_user.png [运行时间：0.020054s][吞吐率：49.87req/s] [内存消耗：1,280.30kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/style.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:05+08:00 ] ::1 ::1 GET /index/index/collectlist?pid=10
+[ log ] au.skxto9314.com/index/index/collectlist?pid=10 [运行时间：0.024643s][吞吐率：40.58req/s] [内存消耗：1,744.34kb] [文件加载：33]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'collectlist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/playlist?pid=10',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+  'pid' => '10',
+)
+[ info ] [ RUN ] app\index\controller\Index->collectlist[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:06+08:00 ] ::1 ::1 GET /index/index/playlist?pid=10
+[ log ] au.skxto9314.com/index/index/playlist?pid=10 [运行时间：0.052858s][吞吐率：18.92req/s] [内存消耗：2,689.09kb] [文件加载：42]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'playlist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songsheet',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+  'pid' => '10',
+)
+[ info ] [ RUN ] app\index\controller\Index->playlist[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\playlist.html [ array (
+  0 => 'sel',
+  1 => 'type',
+  2 => 'data',
+  3 => 'hot',
+  4 => 'result',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005099s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_playlist` [ RunTime:0.001002s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_playlist` WHERE  `pid` = 10 [ RunTime:0.000546s ]
+[ sql ] [ SQL ] UPDATE `tp_playlist`  SET `view_num`=view_num+1  WHERE  `pid` = 10 [ RunTime:0.000382s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_playtype` [ RunTime:0.000613s ]
+[ sql ] [ SQL ] SELECT `playname` FROM `tp_playtype` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000353s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_song_play` [ RunTime:0.000760s ]
+[ sql ] [ SQL ] SELECT `sid` FROM `tp_song_play` WHERE  `pid` = 10 [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_song` [ RunTime:0.000805s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  `sid` = 10 [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  `sid` = 7 [ RunTime:0.000308s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  `sid` = 9 [ RunTime:0.000297s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  `sid` = 6 [ RunTime:0.000269s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_playlist` ORDER BY view_num desc LIMIT 6 [ RunTime:0.000280s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.000582s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = '' [ RunTime:0.000391s ]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:07+08:00 ] ::1 ::1 GET /index/index/songlist
+[ log ] au.skxto9314.com/index/index/songlist [运行时间：0.051986s][吞吐率：19.24req/s] [内存消耗：2,852.90kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'songlist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/playlist?pid=10',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->songlist[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\songlist.html [ array (
+  0 => 'result',
+  1 => 'type',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009998s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.000879s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = '' [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_songtype` [ RunTime:0.000640s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` [ RunTime:0.000311s ]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:07+08:00 ] ::1 ::1 GET /static/index/images/nav.png
+[ log ] au.skxto9314.com/static/index/images/nav.png [运行时间：0.018178s][吞吐率：55.01req/s] [内存消耗：1,280.29kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/style.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:07+08:00 ] ::1 ::1 GET /index/index/songajax?page=1
+[ log ] au.skxto9314.com/index/index/songajax?page=1 [运行时间：0.038389s][吞吐率：26.05req/s] [内存消耗：2,682.35kb] [文件加载：42]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'songajax',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://au.skxto9314.com/index/index/songlist',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+)
+[ info ] [ RUN ] app\index\controller\Index->songajax[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001928s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_song` [ RunTime:0.000770s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` [ RunTime:0.000408s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_song` LIMIT 1 [ RunTime:0.000259s ]
+[ sql ] [ SQL ] select * from tp_song limit 0,10 [ RunTime:0.000307s ]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:07+08:00 ] ::1 ::1 GET /uploads/20180201/688383fe043a432d82275dd59b9b91a5.jpg
+[ log ] au.skxto9314.com/uploads/20180201/688383fe043a432d82275dd59b9b91a5.jpg [运行时间：0.015416s][吞吐率：64.87req/s] [内存消耗：1,280.40kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180201',
+    2 => '688383fe043a432d82275dd59b9b91a5.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songlist',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:07+08:00 ] ::1 ::1 GET /uploads/20180201/0783a4ebd625e2a9a47a386a792e4149.jpg
+[ log ] au.skxto9314.com/uploads/20180201/0783a4ebd625e2a9a47a386a792e4149.jpg [运行时间：0.016369s][吞吐率：61.09req/s] [内存消耗：1,280.40kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180201',
+    2 => '0783a4ebd625e2a9a47a386a792e4149.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songlist',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:07+08:00 ] ::1 ::1 GET /static/index/images/ico_malbum.png
+[ log ] au.skxto9314.com/static/index/images/ico_malbum.png [运行时间：0.021483s][吞吐率：46.55req/s] [内存消耗：1,280.30kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/style.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:07+08:00 ] ::1 ::1 GET /index/index/songplay?sid=8
+[ log ] au.skxto9314.com/index/index/songplay?sid=8 [运行时间：0.047169s][吞吐率：21.20req/s] [内存消耗：2,726.69kb] [文件加载：43]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'songplay',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songlist',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '8',
+)
+[ info ] [ RUN ] app\index\controller\Index->songplay[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002308s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_song` [ RunTime:0.000883s ]
+[ sql ] [ SQL ] SELECT `ispay` FROM `tp_song` WHERE  `sid` = 8 LIMIT 1 [ RunTime:0.000396s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  `sid` = 8 [ RunTime:0.000448s ]
+[ sql ] [ SQL ] UPDATE `tp_song`  SET `view_num`=view_num+1  WHERE  `sid` = 8 [ RunTime:0.004036s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` ORDER BY view_num desc LIMIT 5 [ RunTime:0.000515s ]
+[ error ] [42S02]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tp.tp_post' doesn't exist[D:\wamp64\www\php1714\au\thinkphp\library\think\db\connector\Mysql.php:60]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:09+08:00 ] ::1 ::1 GET /index/index/songlist
+[ log ] au.skxto9314.com/index/index/songlist [运行时间：0.035285s][吞吐率：28.34req/s] [内存消耗：2,663.94kb] [文件加载：42]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'songlist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/playlist?pid=10',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->songlist[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\songlist.html [ array (
+  0 => 'result',
+  1 => 'type',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002391s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.000913s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = '' [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_songtype` [ RunTime:0.000593s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` [ RunTime:0.000254s ]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:10+08:00 ] ::1 ::1 GET /uploads/20180201/0783a4ebd625e2a9a47a386a792e4149.jpg
+[ log ] au.skxto9314.com/uploads/20180201/0783a4ebd625e2a9a47a386a792e4149.jpg [运行时间：0.014990s][吞吐率：66.71req/s] [内存消耗：1,280.40kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180201',
+    2 => '0783a4ebd625e2a9a47a386a792e4149.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songlist',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:10+08:00 ] ::1 ::1 GET /uploads/20180201/688383fe043a432d82275dd59b9b91a5.jpg
+[ log ] au.skxto9314.com/uploads/20180201/688383fe043a432d82275dd59b9b91a5.jpg [运行时间：0.017270s][吞吐率：57.90req/s] [内存消耗：1,280.40kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180201',
+    2 => '688383fe043a432d82275dd59b9b91a5.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songlist',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:11+08:00 ] ::1 ::1 GET /index/index/songplay?sid=7
+[ log ] au.skxto9314.com/index/index/songplay?sid=7 [运行时间：0.053925s][吞吐率：18.54req/s] [内存消耗：2,726.69kb] [文件加载：43]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'songplay',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songlist',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '7',
+)
+[ info ] [ RUN ] app\index\controller\Index->songplay[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011169s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_song` [ RunTime:0.000907s ]
+[ sql ] [ SQL ] SELECT `ispay` FROM `tp_song` WHERE  `sid` = 7 LIMIT 1 [ RunTime:0.000393s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  `sid` = 7 [ RunTime:0.000447s ]
+[ sql ] [ SQL ] UPDATE `tp_song`  SET `view_num`=view_num+1  WHERE  `sid` = 7 [ RunTime:0.002979s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` ORDER BY view_num desc LIMIT 5 [ RunTime:0.000395s ]
+[ error ] [42S02]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tp.tp_post' doesn't exist[D:\wamp64\www\php1714\au\thinkphp\library\think\db\connector\Mysql.php:60]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:12+08:00 ] ::1 ::1 GET /index/index/songlist
+[ log ] au.skxto9314.com/index/index/songlist [运行时间：0.038558s][吞吐率：25.93req/s] [内存消耗：2,663.94kb] [文件加载：42]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'songlist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/playlist?pid=10',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->songlist[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\songlist.html [ array (
+  0 => 'result',
+  1 => 'type',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002031s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.000713s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = '' [ RunTime:0.000379s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_songtype` [ RunTime:0.000563s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` [ RunTime:0.000265s ]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:12+08:00 ] ::1 ::1 GET /static/index/images/nav.png
+[ log ] au.skxto9314.com/static/index/images/nav.png [运行时间：0.020507s][吞吐率：48.76req/s] [内存消耗：1,280.29kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/style.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:12+08:00 ] ::1 ::1 GET /uploads/20180201/0783a4ebd625e2a9a47a386a792e4149.jpg
+[ log ] au.skxto9314.com/uploads/20180201/0783a4ebd625e2a9a47a386a792e4149.jpg [运行时间：0.017147s][吞吐率：58.32req/s] [内存消耗：1,280.40kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180201',
+    2 => '0783a4ebd625e2a9a47a386a792e4149.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songlist',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:12+08:00 ] ::1 ::1 GET /uploads/20180201/688383fe043a432d82275dd59b9b91a5.jpg
+[ log ] au.skxto9314.com/uploads/20180201/688383fe043a432d82275dd59b9b91a5.jpg [运行时间：0.019436s][吞吐率：51.45req/s] [内存消耗：1,280.40kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180201',
+    2 => '688383fe043a432d82275dd59b9b91a5.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songlist',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:12+08:00 ] ::1 ::1 GET /static/index/images/ico_malbum.png
+[ log ] au.skxto9314.com/static/index/images/ico_malbum.png [运行时间：0.020669s][吞吐率：48.38req/s] [内存消耗：1,280.30kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/style.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:21+08:00 ] ::1 ::1 GET /index/index/songplay?sid=11
+[ log ] au.skxto9314.com/index/index/songplay?sid=11 [运行时间：0.046385s][吞吐率：21.56req/s] [内存消耗：2,726.83kb] [文件加载：43]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'songplay',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songlist',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '11',
+)
+[ info ] [ RUN ] app\index\controller\Index->songplay[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002787s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_song` [ RunTime:0.000992s ]
+[ sql ] [ SQL ] SELECT `ispay` FROM `tp_song` WHERE  `sid` = 11 LIMIT 1 [ RunTime:0.000422s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  `sid` = 11 [ RunTime:0.000430s ]
+[ sql ] [ SQL ] UPDATE `tp_song`  SET `view_num`=view_num+1  WHERE  `sid` = 11 [ RunTime:0.003282s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` ORDER BY view_num desc LIMIT 5 [ RunTime:0.000374s ]
+[ error ] [42S02]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tp.tp_post' doesn't exist[D:\wamp64\www\php1714\au\thinkphp\library\think\db\connector\Mysql.php:60]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:56+08:00 ] ::1 ::1 GET /index/index/songplay?sid=11
+[ log ] au.skxto9314.com/index/index/songplay?sid=11 [运行时间：0.055762s][吞吐率：17.93req/s] [内存消耗：2,928.88kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'songplay',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songlist',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '11',
+)
+[ info ] [ RUN ] app\index\controller\Index->songplay[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\songplay.html [ array (
+  0 => 'sid',
+  1 => 'sel',
+  2 => 'hot',
+  3 => 'post',
+  4 => 'result',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010005s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_song` [ RunTime:0.000912s ]
+[ sql ] [ SQL ] SELECT `ispay` FROM `tp_song` WHERE  `sid` = 11 LIMIT 1 [ RunTime:0.000398s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  `sid` = 11 [ RunTime:0.000448s ]
+[ sql ] [ SQL ] UPDATE `tp_song`  SET `view_num`=view_num+1  WHERE  `sid` = 11 [ RunTime:0.004238s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` ORDER BY view_num desc LIMIT 5 [ RunTime:0.000457s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_songpost` [ RunTime:0.000680s ]
+[ sql ] [ SQL ] SELECT `post`.`likes`,`post`.`create_time`,`user`.`username`,`post`.`content`,`user`.`pic`,`post`.`tid` FROM `tp_songpost` `post`,`tp_user` `user` WHERE  `post`.`sid` = '11'  AND (  post.uid = user.uid ) ORDER BY post.create_time desc [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.000675s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = '' [ RunTime:0.000364s ]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:56+08:00 ] ::1 ::1 GET /uploads/20180201/688383fe043a432d82275dd59b9b91a5.jpg
+[ log ] au.skxto9314.com/uploads/20180201/688383fe043a432d82275dd59b9b91a5.jpg [运行时间：0.013849s][吞吐率：72.21req/s] [内存消耗：1,280.40kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180201',
+    2 => '688383fe043a432d82275dd59b9b91a5.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songplay?sid=11',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:56+08:00 ] ::1 ::1 GET /static/index/images/bg.png
+[ log ] au.skxto9314.com/static/index/images/bg.png [运行时间：0.020972s][吞吐率：47.68req/s] [内存消耗：1,280.29kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/zaixian.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:56+08:00 ] ::1 ::1 GET /static/index/images/index_title_bg.png
+[ log ] au.skxto9314.com/static/index/images/index_title_bg.png [运行时间：0.022588s][吞吐率：44.27req/s] [内存消耗：1,280.30kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/zaixian.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:56+08:00 ] ::1 ::1 GET /static/index/images/nav.png
+[ log ] au.skxto9314.com/static/index/images/nav.png [运行时间：0.027073s][吞吐率：36.94req/s] [内存消耗：1,280.29kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/style2.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:02:56+08:00 ] ::1 ::1 GET /static/uploads/song/20180207%EF%BF%BDc3f5c7d4d14d106896a6adeafc.jpg
+[ log ] au.skxto9314.com/static/uploads/song/20180207%EF%BF%BDc3f5c7d4d14d106896a6adeafc.jpg [运行时间：0.019265s][吞吐率：51.91req/s] [内存消耗：1,280.36kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'uploads',
+    2 => 'song',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songplay?sid=11',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:03:00+08:00 ] ::1 ::1 GET /index/user/login
+[ log ] au.skxto9314.com/index/user/login [运行时间：0.023206s][吞吐率：43.09req/s] [内存消耗：1,626.69kb] [文件加载：32]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songplay?sid=11',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/index.html',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->login[ D:\wamp64\www\php1714\au\application\index\controller\User.php ]
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:03:05+08:00 ] ::1 ::1 POST /index/user/doregister
+[ log ] au.skxto9314.com/index/user/doregister [运行时间：0.051395s][吞吐率：19.46req/s] [内存消耗：2,418.85kb] [文件加载：36]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'doregister',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'content-length' => '12',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://au.skxto9314.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://au.skxto9314.com/index/user/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+  'name' => 'kaixuan',
+)
+[ info ] [ RUN ] app\index\controller\User->doregister[ D:\wamp64\www\php1714\au\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002760s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.000909s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = 'kaixuan' [ RunTime:0.000436s ]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:03:07+08:00 ] ::1 ::1 POST /index/user/doregister
+[ log ] au.skxto9314.com/index/user/doregister [运行时间：0.063419s][吞吐率：15.77req/s] [内存消耗：2,417.24kb] [文件加载：36]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'doregister',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'content-length' => '13',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://au.skxto9314.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://au.skxto9314.com/index/user/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+  'name' => 'kaixuan2',
+)
+[ info ] [ RUN ] app\index\controller\User->doregister[ D:\wamp64\www\php1714\au\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009829s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.000888s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = 'kaixuan2' [ RunTime:0.000435s ]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:03:23+08:00 ] ::1 ::1 GET /index/user/phonecode?phone=18435154504
+[ log ] au.skxto9314.com/index/user/phonecode?phone=18435154504 [运行时间：0.025191s][吞吐率：39.70req/s] [内存消耗：1,678.30kb] [文件加载：34]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'phonecode',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://au.skxto9314.com/index/user/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18435154504',
+)
+[ info ] [ RUN ] app\index\controller\User->phonecode[ D:\wamp64\www\php1714\au\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]致命错误: Class 'think\Ucpaas' not found[D:\wamp64\www\php1714\au\application\index\controller\User.php:70]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:03:41+08:00 ] ::1 ::1 GET /index/user/login
+[ log ] au.skxto9314.com/index/user/login [运行时间：0.023125s][吞吐率：43.24req/s] [内存消耗：1,626.80kb] [文件加载：32]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songplay?sid=11',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->login[ D:\wamp64\www\php1714\au\application\index\controller\User.php ]
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:05:28+08:00 ] ::1 ::1 GET /index/user/phonecode?phone=18435154504
+[ log ] au.skxto9314.com/index/user/phonecode?phone=18435154504 [运行时间：0.026212s][吞吐率：38.15req/s] [内存消耗：1,678.30kb] [文件加载：34]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'phonecode',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://au.skxto9314.com/index/user/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18435154504',
+)
+[ info ] [ RUN ] app\index\controller\User->phonecode[ D:\wamp64\www\php1714\au\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]致命错误: Class 'think\Ucpaas' not found[D:\wamp64\www\php1714\au\application\index\controller\User.php:70]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:06:30+08:00 ] ::1 ::1 GET /index/user/login
+[ log ] au.skxto9314.com/index/user/login [运行时间：0.021536s][吞吐率：46.43req/s] [内存消耗：1,626.80kb] [文件加载：32]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songplay?sid=11',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->login[ D:\wamp64\www\php1714\au\application\index\controller\User.php ]
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:06:36+08:00 ] ::1 ::1 GET /index/user/phonecode?phone=18435154504
+[ log ] au.skxto9314.com/index/user/phonecode?phone=18435154504 [运行时间：0.350140s][吞吐率：2.86req/s] [内存消耗：1,664.37kb] [文件加载：32]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'phonecode',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://au.skxto9314.com/index/user/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18435154504',
+)
+[ info ] [ RUN ] app\index\controller\User->phonecode[ D:\wamp64\www\php1714\au\application\index\controller\User.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:26+08:00 ] ::1 ::1 GET /index/index/songplay?sid=11
+[ log ] au.skxto9314.com/index/index/songplay?sid=11 [运行时间：0.055472s][吞吐率：18.03req/s] [内存消耗：2,723.27kb] [文件加载：42]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'songplay',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songlist',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '11',
+)
+[ info ] [ RUN ] app\index\controller\Index->songplay[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\songplay.html [ array (
+  0 => 'sid',
+  1 => 'sel',
+  2 => 'hot',
+  3 => 'post',
+  4 => 'result',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011350s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_song` [ RunTime:0.000889s ]
+[ sql ] [ SQL ] SELECT `ispay` FROM `tp_song` WHERE  `sid` = 11 LIMIT 1 [ RunTime:0.000364s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  `sid` = 11 [ RunTime:0.000386s ]
+[ sql ] [ SQL ] UPDATE `tp_song`  SET `view_num`=view_num+1  WHERE  `sid` = 11 [ RunTime:0.002968s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` ORDER BY view_num desc LIMIT 5 [ RunTime:0.000460s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_songpost` [ RunTime:0.000787s ]
+[ sql ] [ SQL ] SELECT `post`.`likes`,`post`.`create_time`,`user`.`username`,`post`.`content`,`user`.`pic`,`post`.`tid` FROM `tp_songpost` `post`,`tp_user` `user` WHERE  `post`.`sid` = '11'  AND (  post.uid = user.uid ) ORDER BY post.create_time desc [ RunTime:0.000373s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.000518s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = '' [ RunTime:0.000358s ]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:26+08:00 ] ::1 ::1 GET /static/uploads/song/20180207%EF%BF%BDc3f5c7d4d14d106896a6adeafc.jpg
+[ log ] au.skxto9314.com/static/uploads/song/20180207%EF%BF%BDc3f5c7d4d14d106896a6adeafc.jpg [运行时间：0.020524s][吞吐率：48.72req/s] [内存消耗：1,280.39kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'uploads',
+    2 => 'song',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songplay?sid=11',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:29+08:00 ] ::1 ::1 GET /index/index/songplay?sid=11
+[ log ] au.skxto9314.com/index/index/songplay?sid=11 [运行时间：0.057006s][吞吐率：17.54req/s] [内存消耗：2,723.35kb] [文件加载：42]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'songplay',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songlist',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '11',
+)
+[ info ] [ RUN ] app\index\controller\Index->songplay[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\songplay.html [ array (
+  0 => 'sid',
+  1 => 'sel',
+  2 => 'hot',
+  3 => 'post',
+  4 => 'result',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010415s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_song` [ RunTime:0.000849s ]
+[ sql ] [ SQL ] SELECT `ispay` FROM `tp_song` WHERE  `sid` = 11 LIMIT 1 [ RunTime:0.000345s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  `sid` = 11 [ RunTime:0.000480s ]
+[ sql ] [ SQL ] UPDATE `tp_song`  SET `view_num`=view_num+1  WHERE  `sid` = 11 [ RunTime:0.003370s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` ORDER BY view_num desc LIMIT 5 [ RunTime:0.000376s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_songpost` [ RunTime:0.000686s ]
+[ sql ] [ SQL ] SELECT `post`.`likes`,`post`.`create_time`,`user`.`username`,`post`.`content`,`user`.`pic`,`post`.`tid` FROM `tp_songpost` `post`,`tp_user` `user` WHERE  `post`.`sid` = '11'  AND (  post.uid = user.uid ) ORDER BY post.create_time desc [ RunTime:0.000546s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.000982s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = '' [ RunTime:0.000375s ]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:29+08:00 ] ::1 ::1 GET /uploads/20180201/688383fe043a432d82275dd59b9b91a5.jpg
+[ log ] au.skxto9314.com/uploads/20180201/688383fe043a432d82275dd59b9b91a5.jpg [运行时间：0.017091s][吞吐率：58.51req/s] [内存消耗：1,280.43kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180201',
+    2 => '688383fe043a432d82275dd59b9b91a5.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songplay?sid=11',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:29+08:00 ] ::1 ::1 GET /static/index/images/bg.png
+[ log ] au.skxto9314.com/static/index/images/bg.png [运行时间：0.023344s][吞吐率：42.84req/s] [内存消耗：1,280.32kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/zaixian.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:29+08:00 ] ::1 ::1 GET /static/index/images/index_title_bg.png
+[ log ] au.skxto9314.com/static/index/images/index_title_bg.png [运行时间：0.024779s][吞吐率：40.36req/s] [内存消耗：1,280.33kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/zaixian.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:29+08:00 ] ::1 ::1 GET /static/index/images/nav.png
+[ log ] au.skxto9314.com/static/index/images/nav.png [运行时间：0.025197s][吞吐率：39.69req/s] [内存消耗：1,280.32kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/style2.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:29+08:00 ] ::1 ::1 GET /static/uploads/song/20180207%EF%BF%BDc3f5c7d4d14d106896a6adeafc.jpg
+[ log ] au.skxto9314.com/static/uploads/song/20180207%EF%BF%BDc3f5c7d4d14d106896a6adeafc.jpg [运行时间：0.020754s][吞吐率：48.18req/s] [内存消耗：1,280.39kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'uploads',
+    2 => 'song',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songplay?sid=11',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:30+08:00 ] ::1 ::1 GET /index/index/songplay?sid=9
+[ log ] au.skxto9314.com/index/index/songplay?sid=9 [运行时间：0.043228s][吞吐率：23.13req/s] [内存消耗：2,723.14kb] [文件加载：42]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'songplay',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songplay?sid=11',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '9',
+)
+[ info ] [ RUN ] app\index\controller\Index->songplay[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\songplay.html [ array (
+  0 => 'sid',
+  1 => 'sel',
+  2 => 'hot',
+  3 => 'post',
+  4 => 'result',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002499s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_song` [ RunTime:0.000754s ]
+[ sql ] [ SQL ] SELECT `ispay` FROM `tp_song` WHERE  `sid` = 9 LIMIT 1 [ RunTime:0.000288s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  `sid` = 9 [ RunTime:0.000321s ]
+[ sql ] [ SQL ] UPDATE `tp_song`  SET `view_num`=view_num+1  WHERE  `sid` = 9 [ RunTime:0.002923s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` ORDER BY view_num desc LIMIT 5 [ RunTime:0.000522s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_songpost` [ RunTime:0.000715s ]
+[ sql ] [ SQL ] SELECT `post`.`likes`,`post`.`create_time`,`user`.`username`,`post`.`content`,`user`.`pic`,`post`.`tid` FROM `tp_songpost` `post`,`tp_user` `user` WHERE  `post`.`sid` = '9'  AND (  post.uid = user.uid ) ORDER BY post.create_time desc [ RunTime:0.000283s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.000673s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = '' [ RunTime:0.000281s ]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:30+08:00 ] ::1 ::1 GET /uploads/20180201/688383fe043a432d82275dd59b9b91a5.jpg
+[ log ] au.skxto9314.com/uploads/20180201/688383fe043a432d82275dd59b9b91a5.jpg [运行时间：0.013735s][吞吐率：72.81req/s] [内存消耗：1,280.43kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180201',
+    2 => '688383fe043a432d82275dd59b9b91a5.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songplay?sid=9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:30+08:00 ] ::1 ::1 GET /static/index/images/bg.png
+[ log ] au.skxto9314.com/static/index/images/bg.png [运行时间：0.016757s][吞吐率：59.68req/s] [内存消耗：1,280.32kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/zaixian.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:30+08:00 ] ::1 ::1 GET /static/index/images/index_title_bg.png
+[ log ] au.skxto9314.com/static/index/images/index_title_bg.png [运行时间：0.014541s][吞吐率：68.77req/s] [内存消耗：1,280.33kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/zaixian.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:30+08:00 ] ::1 ::1 GET /static/index/images/nav.png
+[ log ] au.skxto9314.com/static/index/images/nav.png [运行时间：0.021645s][吞吐率：46.20req/s] [内存消耗：1,280.32kb] [文件加载：27]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/static/index/css/style2.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:36+08:00 ] ::1 ::1 POST /index/index/songpost?ctype=0&sid=9
+[ log ] au.skxto9314.com/index/index/songpost?ctype=0&sid=9 [运行时间：0.025524s][吞吐率：39.18req/s] [内存消耗：1,768.33kb] [文件加载：33]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'songpost',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'content-length' => '27',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://au.skxto9314.com',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songplay?sid=9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+  'ctype' => '0',
+  'sid' => '9',
+  'content' => '
+      wertyjk',
+)
+[ info ] [ RUN ] app\index\controller\Index->songpost[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:37+08:00 ] ::1 ::1 GET /index/index/songplay?sid=9
+[ log ] au.skxto9314.com/index/index/songplay?sid=9 [运行时间：0.057160s][吞吐率：17.49req/s] [内存消耗：2,723.14kb] [文件加载：42]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'songplay',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songplay?sid=11',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '9',
+)
+[ info ] [ RUN ] app\index\controller\Index->songplay[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\songplay.html [ array (
+  0 => 'sid',
+  1 => 'sel',
+  2 => 'hot',
+  3 => 'post',
+  4 => 'result',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011348s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_song` [ RunTime:0.000857s ]
+[ sql ] [ SQL ] SELECT `ispay` FROM `tp_song` WHERE  `sid` = 9 LIMIT 1 [ RunTime:0.000392s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  `sid` = 9 [ RunTime:0.000442s ]
+[ sql ] [ SQL ] UPDATE `tp_song`  SET `view_num`=view_num+1  WHERE  `sid` = 9 [ RunTime:0.002293s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` ORDER BY view_num desc LIMIT 5 [ RunTime:0.000412s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_songpost` [ RunTime:0.000766s ]
+[ sql ] [ SQL ] SELECT `post`.`likes`,`post`.`create_time`,`user`.`username`,`post`.`content`,`user`.`pic`,`post`.`tid` FROM `tp_songpost` `post`,`tp_user` `user` WHERE  `post`.`sid` = '9'  AND (  post.uid = user.uid ) ORDER BY post.create_time desc [ RunTime:0.000502s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.000679s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = '' [ RunTime:0.000403s ]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:38+08:00 ] ::1 ::1 GET /index/user/login
+[ log ] au.skxto9314.com/index/user/login [运行时间：0.022644s][吞吐率：44.16req/s] [内存消耗：1,626.72kb] [文件加载：32]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songplay?sid=9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=11',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->login[ D:\wamp64\www\php1714\au\application\index\controller\User.php ]
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:39+08:00 ] ::1 ::1 GET /index/index/songplay?sid=9
+[ log ] au.skxto9314.com/index/index/songplay?sid=9 [运行时间：0.054224s][吞吐率：18.44req/s] [内存消耗：2,723.11kb] [文件加载：42]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'songplay',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songplay?sid=11',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=9',
+)
+[ info ] [ PARAM ] array (
+  'sid' => '9',
+)
+[ info ] [ RUN ] app\index\controller\Index->songplay[ D:\wamp64\www\php1714\au\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\songplay.html [ array (
+  0 => 'sid',
+  1 => 'sel',
+  2 => 'hot',
+  3 => 'post',
+  4 => 'result',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009933s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_song` [ RunTime:0.000883s ]
+[ sql ] [ SQL ] SELECT `ispay` FROM `tp_song` WHERE  `sid` = 9 LIMIT 1 [ RunTime:0.000321s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  `sid` = 9 [ RunTime:0.000329s ]
+[ sql ] [ SQL ] UPDATE `tp_song`  SET `view_num`=view_num+1  WHERE  `sid` = 9 [ RunTime:0.001466s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` ORDER BY view_num desc LIMIT 5 [ RunTime:0.000393s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_songpost` [ RunTime:0.000629s ]
+[ sql ] [ SQL ] SELECT `post`.`likes`,`post`.`create_time`,`user`.`username`,`post`.`content`,`user`.`pic`,`post`.`tid` FROM `tp_songpost` `post`,`tp_user` `user` WHERE  `post`.`sid` = '9'  AND (  post.uid = user.uid ) ORDER BY post.create_time desc [ RunTime:0.000351s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.000684s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = '' [ RunTime:0.000376s ]
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:40+08:00 ] ::1 ::1 GET /index/user/login
+[ log ] au.skxto9314.com/index/user/login [运行时间：0.023978s][吞吐率：41.70req/s] [内存消耗：1,626.69kb] [文件加载：32]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://au.skxto9314.com/index/index/songplay?sid=9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=9',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->login[ D:\wamp64\www\php1714\au\application\index\controller\User.php ]
+[ info ] [ VIEW ] D:\wamp64\www\php1714\au\public/../application/index\view\index\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:43+08:00 ] ::1 ::1 POST /index/user/doregister
+[ log ] au.skxto9314.com/index/user/doregister [运行时间：0.036722s][吞吐率：27.23req/s] [内存消耗：1,590.31kb] [文件加载：30]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'doregister',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'content-length' => '5',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://au.skxto9314.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://au.skxto9314.com/index/user/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=9',
+)
+[ info ] [ PARAM ] array (
+  'name' => '',
+)
+[ info ] [ RUN ] app\index\controller\User->doregister[ D:\wamp64\www\php1714\au\application\index\controller\User.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:44+08:00 ] ::1 ::1 POST /index/user/doregister
+[ log ] au.skxto9314.com/index/user/doregister [运行时间：0.043589s][吞吐率：22.94req/s] [内存消耗：1,590.31kb] [文件加载：30]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'doregister',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'content-length' => '5',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://au.skxto9314.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://au.skxto9314.com/index/user/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=9',
+)
+[ info ] [ PARAM ] array (
+  'name' => '',
+)
+[ info ] [ RUN ] app\index\controller\User->doregister[ D:\wamp64\www\php1714\au\application\index\controller\User.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:44+08:00 ] ::1 ::1 POST /index/user/doregister
+[ log ] au.skxto9314.com/index/user/doregister [运行时间：0.019567s][吞吐率：51.11req/s] [内存消耗：1,590.31kb] [文件加载：30]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'doregister',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'content-length' => '5',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://au.skxto9314.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://au.skxto9314.com/index/user/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=9',
+)
+[ info ] [ PARAM ] array (
+  'name' => '',
+)
+[ info ] [ RUN ] app\index\controller\User->doregister[ D:\wamp64\www\php1714\au\application\index\controller\User.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:45+08:00 ] ::1 ::1 POST /index/user/doregister
+[ log ] au.skxto9314.com/index/user/doregister [运行时间：0.041596s][吞吐率：24.04req/s] [内存消耗：1,590.31kb] [文件加载：30]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'doregister',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'content-length' => '5',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://au.skxto9314.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://au.skxto9314.com/index/user/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=9',
+)
+[ info ] [ PARAM ] array (
+  'name' => '',
+)
+[ info ] [ RUN ] app\index\controller\User->doregister[ D:\wamp64\www\php1714\au\application\index\controller\User.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:45+08:00 ] ::1 ::1 POST /index/user/doregister
+[ log ] au.skxto9314.com/index/user/doregister [运行时间：0.043851s][吞吐率：22.80req/s] [内存消耗：1,590.31kb] [文件加载：30]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'doregister',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'content-length' => '5',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://au.skxto9314.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://au.skxto9314.com/index/user/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=9',
+)
+[ info ] [ PARAM ] array (
+  'name' => '',
+)
+[ info ] [ RUN ] app\index\controller\User->doregister[ D:\wamp64\www\php1714\au\application\index\controller\User.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:46+08:00 ] ::1 ::1 POST /index/user/doregister
+[ log ] au.skxto9314.com/index/user/doregister [运行时间：0.040826s][吞吐率：24.49req/s] [内存消耗：1,590.31kb] [文件加载：30]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'doregister',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'content-length' => '5',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://au.skxto9314.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://au.skxto9314.com/index/user/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=9',
+)
+[ info ] [ PARAM ] array (
+  'name' => '',
+)
+[ info ] [ RUN ] app\index\controller\User->doregister[ D:\wamp64\www\php1714\au\application\index\controller\User.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-22T00:07:53+08:00 ] ::1 ::1 POST /index/user/doregister
+[ log ] au.skxto9314.com/index/user/doregister [运行时间：0.034583s][吞吐率：28.92req/s] [内存消耗：1,590.31kb] [文件加载：30]
+[ info ] [ LANG ] D:\wamp64\www\php1714\au\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'doregister',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'au.skxto9314.com',
+  'connection' => 'keep-alive',
+  'content-length' => '5',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://au.skxto9314.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://au.skxto9314.com/index/user/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'cookie' => 'PHPSESSID=bj477lsnn90hk61828q4lvuib6; hzy_login_back=http://au.skxto9314.com/index/index/songplay?sid=9',
+)
+[ info ] [ PARAM ] array (
+  'name' => '',
+)
+[ info ] [ RUN ] app\index\controller\User->doregister[ D:\wamp64\www\php1714\au\application\index\controller\User.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------

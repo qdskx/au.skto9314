@@ -1,0 +1,23 @@
+[ 2018-02-18T17:26:44+08:00 ] ::1 ::1 GET /
+[ log ] www.music.com/ [运行时间：1.025707s][吞吐率：0.97req/s] [内存消耗：2,343.30kb] [文件加载：42]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020816s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.029433s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = '' [ RunTime:0.001015s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_suf` [ RunTime:0.032298s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_suf` [ RunTime:0.000755s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_songtype` [ RunTime:0.019337s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.021863s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.001304s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.001226s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.001234s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_song` [ RunTime:0.032652s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  (  song_type=1 ) LIMIT 4 [ RunTime:0.001488s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  (  song_type=2 ) LIMIT 4 [ RunTime:0.001487s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  (  song_type=3 ) LIMIT 4 [ RunTime:0.001334s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  (  song_type=4 ) LIMIT 4 [ RunTime:0.001563s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_playlist` [ RunTime:0.044342s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_playlist` ORDER BY view_num desc LIMIT 4 [ RunTime:0.033864s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_mv` [ RunTime:0.035393s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_mv` ORDER BY view_num desc LIMIT 4 [ RunTime:0.001938s ]
+
+---------------------------------------------------------------

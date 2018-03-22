@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="gb2312">
+	<meta name="renderer" content="webkit">
+	<title>歌手信息</title>
+	<link rel="stylesheet" href="/static/index/css/style.css">
+	<script type="text/javascript" src="/static/index/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/index/js/common.js"></script>
+	<script type="text/javascript">
+	  var web_url="/";web_skin="/skin/qt_fb/";$(function() {$("img").lazyload({placeholder : "/skin/qt_fb/images/loading.gif",effect: "fadeIn"});$("#nav_artist").addClass("current");});
+	function hideText(e,conLen,str1,str2){textBox=document.getElementById(e);if(""==conText){conText=textBox.innerHTML}if(navigator.appName.indexOf("Explorer")>-1){if(textBox.innerText.length<conLen){return}textBox.innerHTML=textBox.innerText.substr(0,conLen)}else{if(textBox.textContent.length<conLen){return}textBox.innerHTML=textBox.textContent.substr(0,conLen)}textBox.innerHTML+='.....</div><div style="float:right;margin-top:15px;"><a class="singerintro" href="javascript:;" onclick="showText(\''+e+"','"+conLen+"', '"+str1+"', '"+str2+'\');return false" target="_self">'+str1+"</a></div><br>"}function showText(e,conLen,str1,str2){textBox=document.getElementById(e);textBox.innerHTML=conText+'</div><div style="float:right;margin-top:15px;"><a class="singerintro" href="javascript:;" onclick="hideText(\''+e+"', '"+conLen+"', '"+str1+"', '"+str2+'\');return false" target="_self">'+str2+"</a></div><br>"};
+	  </script>
+	<script src="/static/index/js/share.js"></script>
+	<link rel="stylesheet" href="/static/index/css/share_style0_32.css">
+</head>
+
+{include file="header"}
+
+{volist name="singer" id="val"}
+<div class="bg_box">
+	<div class="main">
+	<div class="singer">
+	<div class="singer-pic">
+	<img src="{$val.pic}"  width="200" height="200">
+	</div>
+	<div class="singer-info">
+	<div class="title">
+	<h1><a>{$val.singer_name}</a></h1>
+	</div>
+	<div class="scrollbar2">
+	<ul>
+	<li>姓名：{$val.singer_name}</li>
+	<li>国籍： 中国</li>
+	<li>语言： 国语</li>
+	<li>出生地： {$val.province}</li>
+	<li>更新时间：2017-06-04</li>
+	</ul>
+	</div>
+
+	</div>
+	<div class="word">
+	<div class="title">
+	<h2>个人资料</h2>
+	</div>
+	<div id="cText">
+		{$val.intro}
+		<div style="float:right;margin-top:15px;"><a class="singerintro" href="javascript:;" onclick="showText('cText','300', '[详细资料+]', '[收回-]');return false" target="_self">[详细资料+]</a></div><br>
+	</div>
+	<script language="javascript"> var conText = ""; hideText("cText", 300, "[详细资料+]", "[收回-]"); </script>
+	</div>
+	</div>
+
+
+	</div>
+	</div>
+
+
+</div>
+</div>
+{/volist}
+
+
+<link href="css/asynctips.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/asyncbox.js"></script>
+<script type="text/javascript" src="js/bottom.js"></script>
+
+<!--尾部开始-->
+{include file="footer"}
+<!--尾部结束-->
+

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Au音乐网</title>
+  <link rel="icon" href="favicons/1.png">
+  <link rel="stylesheet" href="/static/index/css/style2.css">
+  <link rel="stylesheet" href="/static/index/css/reset.css">
+  <link rel="stylesheet" href="/static/index/css/index.css">
+  <link rel="stylesheet" type="text/css" href="/static/index/css/style3.css" />
+
+
+</head>
+<body>
+
+    <!--头部开始-->
+  {include file="header"}
+
+    <!--头部结束-->
+<script type="text/javascript" src="/static/index/js2/jquery2.js"></script>
+<script type="text/javascript" src="/static/index/js2/index2.js"></script>
+ <!--轮播图 开始 -->
+    <div class="main_banner" style="margin-top:5px;margin-bottom:30px;background-color: #eee">
+        <div class="main_banner_bg"></div>
+        <div class="main_banner_wrap">
+      <canvas id="myCanvas" width="150" height="150" style="display:none"></canvas>
+            <div class="main_banner_box" id="m_box">
+                <a href="javascript:void(0)" class="banner_btn js_pre">
+                    <span class="banner_btn_arrow"><i></i></span>
+                </a>
+                <a href="javascript:void(0)" class="banner_btn btn_next js_next">
+                    <span class="banner_btn_arrow"><i></i></span>
+                </a>
+                <!--五个图片-->
+                <ul>
+                    <li id="imgCard0">
+                        <a href="{$lun[0]['url']}"><span style="opacity:0;"></span></a>
+                        <img src="{$lun[0]['pic']}" alt="">
+                        <p style="bottom:0">{$lun[0]['intro']}</p>
+                    </li>
+                    <li id="imgCard1">
+                        <a href="{$lun[1]['url']}"><span style="opacity:0.4;"></span></a>
+                        <img src="{$lun[1]['pic']}" alt="">
+                        <p>{$lun[1]['intro']}</p>
+                    </li>
+                    <li id="imgCard2">
+                        <a href="{$lun[2]['url']}"><span style="opacity:0.4;" ></span></a>
+                        <img src="{$lun[2]['pic']}" alt="">
+                        <p>{$lun[2]['intro']}</p>
+                    </li>
+                    <li id="imgCard3">
+                        <a href="{$lun[3]['url']}"><span style="opacity:0.4;"></span></a>
+                        <img src="{$lun[3]['pic']}" alt="">
+                        <p>{$lun[3]['intro']}</p>
+                    </li>
+                    <li id="imgCard4">
+                        <a href="{$lun[4]['url']}"><span style="opacity:0.4;"></span></a>
+                        <img src="{$lun[4]['pic']}" alt="">
+                        <p>{$lun[4]['intro']}</p>
+                    </li>
+                </ul>
+                <!--火狐倒影图层-->
+                <p id="rflt"></p>
+                <!--火狐倒影图层-->
+            </div>
+            <!--序列号按钮-->
+            <div class="btn_list">
+                <span class="curr"></span><span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+    <!--轮播图 结束 -->
+  <!--轮播图结束-->
+
+  <!-- 排行榜 -->
+  <div class="main" id="rank">
+    <div class="main-inner">
+      <div class="main-title">
+        <!-- <h2 class="title"><i style="font-size:50px">排行榜</i></h2> -->
+        <h2 class="title" style="font-size:50px" >排行榜</h2>
+        <span class="line line-left"></span>
+        <span class="line line-right"></span>
+      </div>
+      <a href="#" class="readAll" style="color:black"><i ></i></a>
+      <ul class="rank-list">
+
+        <li class="rank-list__item rank-list__1">
+          <span class="rank-bg" style="background:url({$song1pic['cover']});"></span>
+          <span class="mask"></span>
+          <a href="/index/index/songlist2?id=1"><i class="icon-play"></i></a>
+
+          <div class="title">
+            <i></i>
+            <h3 style="color:#e85252">流行歌曲</h3>
+          </div>
+          <i class="line"></i>
+          <ul class="song-list">
+            {volist name="song1" id="val"}
+            <li class="song-list__item">
+              <a href="/index/index/songplay?sid={$val.sid}" style="font-size:20px;"><span></span>{$val.sname}</a>
+              <span>{$val.singer}</span>
+              {/volist}
+            </li>
+          </ul>
+        </li>
+
+        <li class="rank-list__item rank-list__1">
+          <span class="rank-bg" style="background:url({$song2pic['cover']});"></span>
+          <span class="mask"></span>
+          <a href="/index/index/songlist2?id=2"><i class="icon-play"></i></a>
+
+          <div class="title">
+            <i></i>
+            <h3 style="color:#e85252">治愈歌曲</h3>
+          </div>
+          <i class="line"></i>
+          <ul class="song-list">
+            {volist name="song2" id="val"}
+            <li class="song-list__item" >
+              <a href="/index/index/songplay?sid={$val.sid}" style="font-size:20px;"><span></span>{$val.sname}</a>
+              <span>{$val.singer}</span>
+            </li>
+            {/volist}
+          </ul>
+        </li>
+
+        <li class="rank-list__item rank-list__1">
+          <span class="rank-bg" style="background:url({$song3pic['cover']});"></span>
+          <span class="mask"></span>
+          <a href="/index/index/songlist2?id=3"><i class="icon-play"></i></a>
+
+          <div class="title">
+            <i></i>
+            <h3 style="color:#e85252">粤语歌曲</h3>
+          </div>
+          <i class="line"></i>
+          <ul class="song-list">
+            {volist name="song3" id="val"}
+            <li class="song-list__item">
+              <a href="/index/index/songplay?sid={$val.sid}" style="font-size:20px;"><span></span>{$val.sname}</a>
+              <span>{$val.singer}</span>
+            </li>
+            {/volist}
+          </ul>
+        </li>
+
+        <li class="rank-list__item rank-list__1">
+          <span class="rank-bg" style="background:url({$song4pic['cover']});"></span>
+          <span class="mask"></span>
+          <a href="/index/index/songlist2?id=4"><i class="icon-play"></i></a>
+
+          <div class="title">
+            <i></i>
+            <h3 style="color:#e85252">电音歌曲</h3>
+          </div>
+          <i class="line"></i>
+          <ul class="song-list">
+          {volist name="song4" id="val"}
+            <li class="song-list__item">
+              <a href="/index/index/songplay?sid={$val.sid}" style="font-size:20px;"><span></span>{$val.sname}</a>
+              <span>{$val.singer}</span>
+            </li>
+            {/volist}
+          </ul>
+        </li>
+
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 热门歌单 -->
+  <div class="main" id="hotSong">
+    <div class="main-inner">
+      <div class="main-title">
+        <h2 class="title"><i></i></h2>
+        <span class="line line-left"></span>
+        <span class="line line-right"></span>
+      </div>
+      <div class="main-slider">
+        <ul class="slider-wrapper">
+        {volist name="hotsheet" id="val"}
+          <li>
+            <a href="/index/index/playlist?pid={$val.pid}" class="img">
+              <!-- <img src="images/cont/slider_img1.jpg" alt="#"> -->
+              <img src="{$val.pic}" style="min-height:300px">
+              <span class="mask"></span>
+              <i class="icon-play"></i>
+            </a>
+            <div class="info">
+              <div class="title">
+                <!-- <a href="#">那个静默的阳光午后</a> -->
+                <a href="/index/index/playlist?pid={$val.pid}">{$val.pname}</a>
+                <i class="icon-sprite"></i>
+              </div>
+              <a href="/index/index/playlist?pid={$val.pid}" class="author">点击量：{$val.view_num}</a>
+            </div>
+          </li>
+          {/volist}
+
+
+        </ul>
+        <!-- <div class="slider-btns"> -->
+          <!-- <span class="cur"><i></i></span> -->
+          <!-- <span><i></i></span> -->
+          <!-- <span><i></i></span> -->
+        <!-- </div> -->
+      </div>
+    </div>
+    <div class="main-operate">
+      <!-- <a href="javascript:;" class="slider-prev"><i class="icon-sprite"></i></a> -->
+      <!-- <a href="javascript:;" class="slider-next"><i class="icon-sprite"></i></a> -->
+    </div>
+  </div>
+
+
+  <!-- MV -->
+  <div class="main" id="mv">
+    <div class="main-inner">
+      <div class="main-title">
+        <h2 class="title"><i></i></h2>
+        <span class="line line-left"></span>
+        <span class="line line-right"></span>
+      </div>
+      <!-- <a href="#" class="readAll" style="color:black;"> -->
+      <!-- 全部<i class="icon-sprite"></i></a> -->
+
+      <ul class="mv-list tab-cont">
+        {volist name="hotmv" id="val"}
+        <li class="item">
+          <a href="/index/index/mvplay?vid={$val.vid}" class="img"><img src="{$val.pic}" alt="#"><i class="icon-play"></i></a>
+          <div class="info">
+            <a href="/index/index/mvplay?vid={$val.vid}" class="title">{$val.vname}</a>
+            <a href="/index/index/mvplay?vid={$val.vid}" class="author">{$val.vsinger}</a>
+            <span class="play-total"><i class="icon-sprite"></i>{$val.view_num}</span>
+          </div>
+        </li>
+        {/volist}
+      </ul>
+    </div>
+  </div>
+
+
+
+
+
+<!--尾部-->
+    <div class="footer">
+    <p class="p1">
+    <span><a href="#" target="mobile"><img src="/static/index/image/footer1.png">邵凯旋 & 景松旺</a> </span>
+    <span><img src="/static/index/image/footer2.png">联系电话：184-3515-4504</span>
+    <span><img src="/static/index/image/footer3.png">联系QQ：895770532</span>
+    </p>
+    <p class="p2">友情链接 &emsp;
+    {if !empty($link)}
+    {volist name="link" id="val"}
+      <a href="{$val.url}" style="display:inline-block">{$val.name}</a>
+    {/volist}
+    {/if}
+
+    </p>
+    <p class="p3">Au音乐网  &#169;&emsp;晋ICP备18000657号-1
+    </p>
+    </div>
+<!--尾部结束-->
+
+  <link href="/static/index/css/asynctips.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="/static/index/js/asyncbox.js"></script>
+  <script type="text/javascript" src="/static/index/js/bottom.js"></script>
+
+
+</body>
+</html>
+
+
+

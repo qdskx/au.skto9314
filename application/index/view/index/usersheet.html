@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Au音乐网-用户歌单</title>
+<link rel="stylesheet" href="/static/index/css/style.css">
+<script type="text/javascript" src="/static/index/js/jquery.js"></script>
+<script type="text/javascript" src="/static/index/js/common.js"></script>
+<script type="text/javascript">
+    var web_url="/";web_skin="/skin/qt_fb/";$(function() {$("img").lazyload({placeholder : "/skin/qt_fb/images/loading.gif",effect: "fadeIn"});$("#nav_malbum").addClass("current");});
+</script>
+</head>
+<body>
+    <!--头部开始-->
+    {include file="header"}
+    <!--头部结束-->
+
+<div class="bg_box" style="min-height: 350px;">
+    <div class="main">
+    <div class="record_list">
+
+    <div class="record_lable">
+        <dl>
+            <dt></dt>
+                <dd><a href="#">我的歌单收藏</a></dd>
+        </dl>
+    </div>
+
+    <div class="box3 mt20">
+    <div class="malbum_index">
+        {if !empty($data)}
+        {volist name="data" id="val"}
+        <dl class="new_music">
+        <a target="" href="/index/index/playlist?pid={$val.pid}">
+            <dt> <img src="{$val.pic}" width="159" height="159" title="{$val.pname}"> <span class="malbum"></span> </dt>
+        </a>
+        <dd class="new_music_title">{$val.pname}</dd>
+        <dd class="new_music_title"><a style="color:red" href="/index/index/cancelsheet?pid={$val.pid}">取消收藏</a></dd>
+
+        <!-- <dd class="new_music_name">免费试听</dd> -->
+        </dl>
+        {/volist}
+        {/if}
+
+
+
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<!--占位的-->
+<div class="bg_box" style="height:300px;">
+</div>
+<!--占位结束-->
+
+
+    <!--尾部开始-->
+    {include file="footer"}
+    <!--尾部结束-->
+
+<link href="/static/index/css/asynctips.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/static/index/js/asyncbox.js"></script>
+<script type="text/javascript" src="/static/index/js/bottom.js"></script>
+
+
+
+</body>
+</html>
+
+

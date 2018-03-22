@@ -1,0 +1,129 @@
+﻿
+
+
+
+	<script type="text/javascript" src="/static/index/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/index/js/common.js"></script>
+
+	<div class="header">
+  <div class="logo_nav">
+  <h1 class="logo"><a href="/index/index/index"><img src="/static/index/image/qw.png" original="/skin/qt_fb/images/logo.png" height="33"></a></h1>
+  <dl class="nav">
+    <dt><a href="/index/index/index">首页</a><span id="nav_index"></span></dt>
+    <dt><a href="/index/index/songlist">乐库</a><span id="nav_play"></span></dt>
+    <dt><a href="/index/index/songsheet">歌单</a><span id="nav_malbum" class="current"></span></dt>
+    <dt><a href="/index/index/mvlist">MV</a><span id="nav_video"></span></dt>
+    <dt><a href="/index/index/singerlist">歌手</a><span id="nav_artist"></span></dt>
+    {if !empty($Think.session.username)}
+    <dt><a  href="/codepay/index.php?user={$uid}">开通红钻会员</a><span id="nav_news"></span></dt>
+    {/if}
+  </dl>
+   <div class="login">
+    <ul>
+      {if condition="($Think.session.username == null)"}
+      <li style="margin-right: 15px;"><a href="/index/user/login" >登录</a></li>
+      <li><a href="/index/user/login">注册</a></li>
+      {else /}
+      <li style="margin-right: 5px;"><a href="/index/index/userinfo"><img src="{$result[0]['pic']}" width="45px;" height="45px"></a></li>
+      <li style="margin-right:;overflow:hidden;width:60px;"><a>{$Think.session.username}</a></li>
+        {if condition ="($result[0]['isred'] == 0)"}
+              {if condition="($result[0]['type'] == 2)"}
+        <li><a>普通[QQ]</a></li>
+              {elseif condition="($result[0]['type'] == 3)" }
+        <li><a>普通[微博]</a></li>
+              {elseif condition="($result[0]['type'] == 1)" }
+        <li><a>普通[Au]</a></li>
+              {/if}
+        {else /}
+              {if condition="($result[0]['type'] == 2)"}
+        <li><a style="color:yellow">红钻[QQ]</a></li>
+              {elseif condition="($result[0]['type'] == 3)" }
+        <li><a style="color:yellow">红钻[微博]</a></li>
+              {elseif condition="($result[0]['type'] == 1)" }
+        <li><a style="color:yellow">红钻[Au]</a></li>
+              {/if}
+        {/if}
+      <li><a href="/index/user/loginout">退出</a></li>
+      {/if}
+
+
+    </ul>
+  </div>
+  </div>
+</div>
+
+<div class="nav_list">
+  <ul class="nav_l" style="margin-left:100px;">
+    {if condition="$Think.session.username !== null"}
+    <li><a href="/index/index/userinfo">个人资料</a></li>
+    <li><a href="/index/index/usersheet">我的歌单</a></li>
+    <li><a href="/index/index/usersong">我的歌曲</a></li>
+    <li><a href="/index/index/seachres">搜索</a></li>
+    {else \}
+    <li style="width:320px;"><marquee behavior="alternate">登录查看更多内容哦~~~~</marquee></li>
+    {/if}
+    <!-- <li><a href="index/index/songlist">自定义菜单</a></li> -->
+    <!-- <li><a href="index/index/songlist" id="nav_valbum">MV专辑</a></li> -->
+    <!-- <li><a href="index/index/songlistr">会员中心</a></li> -->
+  </ul>
+
+</div>
+
+    <link rel="stylesheet" type="text/css" href="/static/index/css/xcConfirm.css"/>
+    <script src="/static/index/js/jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/index/js/xcConfirm.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+      .sgBtn{width: 135px; height: 35px; line-height: 35px; margin-left: 10px; margin-top: 10px; text-align: center; background-color: #0095D9; color: #FFFFFF; float: left; border-radius: 5px;}
+    </style>
+    <script type="text/javascript">
+      $(function(){
+
+        $("#vip").click(function(){
+          var txt=  "请确认是否花费100RMB开通红钻会员";
+          var option = {
+            title: "您即开通本站会员业务",
+            btn: parseInt("0011",2),
+            onOk: function(){
+              // console.log("确认啦");
+                $.ajax({
+                  method:'get',
+                  url:'/index/index/vip',
+                  async:true,
+                  data:{page:1},
+                  success:success,
+                });
+            }
+          }
+          function success(data)
+          {
+            console.log(data);
+            var obj = JSON.parse(data);
+            console.log(obj);
+            if(obj.status==1){
+              window.location.reload();
+              alert('开通成功');
+            }else{
+              alert('开通失败');
+
+            }
+          }
+          window.wxc.xcConfirm(txt, "custom", option);
+        });
+
+      });
+    </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

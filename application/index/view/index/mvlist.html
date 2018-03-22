@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>音乐列表</title>
+<link rel="stylesheet" href="/static/index/css/style.css">
+<script type="text/javascript" src="/static/index/js/jquery.js"></script>
+<script type="text/javascript" src="/static/index/js/common.js"></script>
+<script type="text/javascript">
+    var web_url="/";web_skin="/skin/qt_fb/";$(function() {$("img").lazyload({placeholder : "/skin/qt_fb/images/loading.gif",effect: "fadeIn"});$("#nav_malbum").addClass("current");});
+</script>
+</head>
+<body>
+    {include file="header"}
+<div class="bg_box">
+<div class="main">
+<div class="video">
+
+
+<div class="record_list">
+<div class="record_lable">
+<dl>
+<dt>所有</dt>
+  <!--   <dd><a href="http://sqdemo.x5mp3.com/video/neidi/1.html">内地</a></dd>
+    <dd><a href="http://sqdemo.x5mp3.com/video/gangtai/1.html">港台</a></dd>
+    <dd><a href="http://sqdemo.x5mp3.com/video/oumei/1.html">欧美</a></dd>
+    <dd><a href="http://sqdemo.x5mp3.com/video/dj/1.html">DJ现场</a></dd>
+    <dd><a href="http://sqdemo.x5mp3.com/video/rihan/1.html">日韩</a></dd> -->
+</dl>
+</div>
+</div>
+<ul class="list">
+{volist name="sel" id="val"}
+<li>
+    <a target="video" href="/index/index/mvplay?vid={$val.vid}">
+        <img src="{$val.pic}" alt="" ><h5>{$val.vname}</h5><p>{$val.vsinger}</p>
+    </a>
+</li>
+{/volist}
+
+<!--
+<li><a target="video" href="http://sqdemo.x5mp3.com/video/1209.html"><img src="%E8%A7%86%E9%A2%91%E5%BA%93_%E9%AB%98%E6%B8%85%E9%9F%B3%E4%B9%90MV%E8%A7%86%E9%A2%91_x5Music_files/-M-8624504ceb567ba85786f0dc38f0d7a1_240x135.jpg" alt="勇者没意见 - 子" original="//img1.c.yinyuetai.com/video/mv/180124/0/-M-8624504ceb567ba85786f0dc38f0d7a1_240x135.jpg"><h5>勇者没意见 - 子</h5><p>子</p></a></li> -->
+
+
+</ul>
+</div>
+</div>
+</div>
+</body></html>
+<!--占位的-->
+<div class="bg_box" style="height:300px;">
+</div>
+<!--占位结束-->
+
+
+    <!--尾部开始-->
+    {include file="footer"}
+    <!--尾部结束-->
+
+<link href="/static/index/css/asynctips.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/static/index/js/asyncbox.js"></script>
+<script type="text/javascript" src="/static/index/js/bottom.js"></script>
+
+
+
+</body>
+</html>

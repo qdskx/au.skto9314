@@ -1,0 +1,122 @@
+
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>音乐列表</title>
+<link rel="stylesheet" href="/static/index/css/style.css">
+<script type="text/javascript" src="/static/index/js/jquery.js"></script>
+<script type="text/javascript" src="/static/index/js/common.js"></script>
+
+<script src="/static/index/js/jquery-1.11.3.min.js"></script>
+
+<style type="text/css" media="screen">
+	#pa a:hover{
+		color:red;
+	}
+</style>
+</head>
+<body>
+	<!--头部开始-->
+	{include file="header"}
+	<!--头部结束-->
+
+<div class="bg_box" style="position:relative;min-height:700px;">
+	<div class="main">
+	<div class="record_list">
+
+	<div class="record_lable">
+		<dl>
+			<dt>类别</dt>
+				<dd><a href="/index/index/songlist">全部</a></dd>
+				{volist name="type" id="val"}
+				<dd><a href="/index/index/songlist2?id={$val.id}">{$val.stname}</a></dd>
+				{/volist}
+		</dl>
+	</div>
+
+	<div class="box3 mt20">
+
+	<div class="malbum_index">
+
+
+
+
+	</div>
+	</div>
+	</div>
+		<div style="background-color:;height:20px;float:left;width:100%;">
+			<div style="width:400px;margin:0 auto;background-color:;height:50px;position:absolute;bottom:30px;left:50%;margin-left:-200px;" id="pa" >
+				<a href="" class="pa"><span style="width:50px;background-color:;text-align: center;margin-left:30px">首页</span></a>
+				<a href="" class="pa"><span style="width:50px;background-color:;text-align: center;margin-left:30px">上一页</span></a>
+				<a href="" class="pa"><span style="width:50px;background-color:;text-align: center;margin-left:30px">下一页</span></a>
+				<a href="" class="pa"><span style="width:50px;background-color:;text-align: center;margin-left:30px">尾页</span></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+	<!--尾部开始-->
+	{include file="footer"}
+	<!--尾部结束-->
+
+<!-- <link href="/static/index/css/asynctips.css" rel="stylesheet" type="text/css"> -->
+<script type="text/javascript" src="/static/index/js/asyncbox.js"></script>
+<script type="text/javascript" src="/static/index/js/bottom.js"></script>
+</body>
+</html>
+
+<!--分页-->
+<script>
+	var big = $('.malbum_index');
+	var aA = $('.pa');
+	$.ajax({
+		method:'get',
+		url:'/index/index/songajax',
+		async:true,
+		data:{page:1},
+		success:success,
+	});
+	function success(data)
+	{
+		var obj = JSON.parse(data);
+		var str = '';
+
+		for(i=0;i<obj.data.length;i++){
+		    str += '<dl class="new_music">'+
+            '<a '+'href=/index/index/songplay?sid='+obj.data[i].sid+'>'+
+            	'<dt>'+
+            		'<img src='+obj.data[i].pic+' width="159" height="159"' + 'title="'+obj.data[i].sname+'"/>'+
+            		'<span class="malbum"></span>'+
+            	'</dt>'+
+            '</a>'+
+            '<dd class="new_music_title">'+obj.data[i].sname+'--'+obj.data[i].singer+'</dd>'+
+            '<dd class="new_music_name">'+obj.data[i].ispay+'</dd>'+
+            '</dl>'
+			$('.malbum_index').html(str);
+		}
+		var oPage = obj.allPage;
+		var i = 0;
+		for (var name in oPage) {
+			aA[i].href = 'javascript:test(\'' +oPage[name] +'\')';
+			i++;
+		}
+
+
+	}
+	function test(url)
+	{
+		$.ajax({
+			method:'get',
+			url:url,
+			async:true,
+			data:null,
+			success:success
+		});
+	}
+
+
+
+
+</script>
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- <meta charset="gb2312"> -->
+<meta name="renderer" content="webkit">
+<title>Au音乐网-用户资料</title>
+
+<link rel="stylesheet" href="/static/index/css/style.css">
+<script type="text/javascript" src="/static/index/js/jquery.js"></script>
+<script type="text/javascript" src="/static/index/js/common.js"></script>
+<script type="text/javascript">var web_url="/";web_skin="/skin/qt_fb/";$(function() {$("#nav_news").addClass("current");});</script>
+</head>
+<body>
+
+	<!--头部开始-->
+
+    {include file="header"}
+	<!--头部结束-->
+
+<div class="bg_box">
+<div class="main">
+{if !empty($result)}
+        {volist name="user" id="val"}
+    <div style="width:1000px;padding:20px;background-color: white;margin-top: 30px;font-weight: normal; min-height: 515px;color:#333;font-size: 17px;">
+    <h2 style="margin-bottom:28px">用户资料</h2>
+    <form action="/index/index/douser" method="post" enctype="multipart/form-data">
+    用户名&emsp;：{$val.username}<br/><br/>
+    邮&emsp;箱&emsp;：{$val.email}<br/><br/>
+    注册时间：{$val.create_time|date="y-m-d h:i:s",###}<br><br>
+    {if $val.sex == 0}
+    性&emsp;别&emsp;：女   <br/><br/>
+    {else / }
+    性&emsp;别&emsp;：男  <br/><br/>
+    {/if}
+    手机号&emsp;：{$val.phone}<br/><br/>
+    个性签名：<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;
+    <textarea  name="signature" style="border:1px solid #aaa;width:300px;height:50px;" placeholder="{$val.signature}"></textarea><br>
+    个人头像：
+    <div style="margin-top:10px;margin-bottom: 10px;">
+        &emsp;&emsp;&emsp;&emsp;&emsp;<img src="{$val.pic}" alt="图片走丢了" width="120px" height="120px" alt="">
+    </div><br>
+    {if $val.type == 1}
+    修改头像：<input type="file" name="image" ><br><br>
+    {/if}
+    <input type="submit" name="" value="提交" style="border:1px solid #aaa;width:70px;height:35px;background-color:#E85252;color:white">
+    </form>
+    </div>
+        {/volist}
+{/if}
+</div>
+</div>
+<link href="/static/index/css/asynctips.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/static/index/js/asyncbox.js"></script>
+<script type="text/javascript" src="/static/index/js/bottom.js"></script>
+
+
+
+
+
+<!--尾部-->
+    {include file="footer"}
+<!--尾部结束-->
+
+
+
+
+
+</body>
+</html>
+
+
+

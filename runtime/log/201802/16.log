@@ -1,0 +1,134 @@
+[ 2018-02-16T10:47:22+08:00 ] ::1 ::1 GET /
+[ log ] www.music.com/ [运行时间：0.135896s][吞吐率：7.36req/s] [内存消耗：2,526.55kb] [文件加载：44]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002143s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.002304s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  `username` = '' [ RunTime:0.000943s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_suf` [ RunTime:0.001587s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_suf` [ RunTime:0.000540s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_songtype` [ RunTime:0.002029s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000497s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000674s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000703s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_songtype` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000621s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_song` [ RunTime:0.001645s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  (  song_type=1 ) LIMIT 4 [ RunTime:0.036950s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  (  song_type=2 ) LIMIT 4 [ RunTime:0.000801s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  (  song_type=3 ) LIMIT 4 [ RunTime:0.000720s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_song` WHERE  (  song_type=4 ) LIMIT 4 [ RunTime:0.000519s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_playlist` [ RunTime:0.001687s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_playlist` ORDER BY view_num desc LIMIT 4 [ RunTime:0.006491s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_mv` [ RunTime:0.002314s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_mv` ORDER BY view_num desc LIMIT 4 [ RunTime:0.000653s ]
+
+---------------------------------------------------------------
+[ 2018-02-16T10:47:35+08:00 ] ::1 ::1 POST /admin/user/dologin
+[ log ] www.music.com/admin/user/dologin [运行时间：0.055259s][吞吐率：18.10req/s] [内存消耗：2,308.08kb] [文件加载：42]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003205s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.003109s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  (  username='me' and password='7815696ecbf1c96e6894b779456d330e' and type=0 ) [ RunTime:0.000855s ]
+
+---------------------------------------------------------------
+[ 2018-02-16T10:47:39+08:00 ] ::1 ::1 GET /admin/index
+[ log ] www.music.com/admin/index [运行时间：0.406067s][吞吐率：2.46req/s] [内存消耗：2,369.70kb] [文件加载：42]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001965s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_role_user` [ RunTime:0.001048s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_role_user` WHERE  (  user_id=34 ) [ RunTime:0.000981s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_role` [ RunTime:0.001104s ]
+[ sql ] [ SQL ] SELECT `n`.`level`,`n`.`name`,`n`.`ename`,`n`.`pid`,`n`.`nid` FROM `tp_role` `r`,`tp_access` `a`,`tp_node` `n` WHERE  (  r.role_id=1 and r.role_id=a.role_id and a.node_id=n.nid ) [ RunTime:0.000771s ]
+
+---------------------------------------------------------------
+[ 2018-02-16T10:47:59+08:00 ] ::1 ::1 GET /admin/user/userlist
+[ log ] www.music.com/admin/user/userlist [运行时间：0.070321s][吞吐率：14.22req/s] [内存消耗：2,374.02kb] [文件加载：42]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001922s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_user` [ RunTime:0.002159s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE  `type` <> 0 LIMIT 1 [ RunTime:0.000854s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_user` WHERE  (  type != 0 ) LIMIT 0,3 [ RunTime:0.000985s ]
+
+---------------------------------------------------------------
+[ 2018-02-16T10:59:19+08:00 ] ::1 ::1 GET /admin/index
+[ log ] www.music.com/admin/index [运行时间：0.437194s][吞吐率：2.29req/s] [内存消耗：2,369.42kb] [文件加载：42]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002250s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_role_user` [ RunTime:0.002162s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_role_user` WHERE  (  user_id=34 ) [ RunTime:0.000612s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_role` [ RunTime:0.002087s ]
+[ sql ] [ SQL ] SELECT `n`.`level`,`n`.`name`,`n`.`ename`,`n`.`pid`,`n`.`nid` FROM `tp_role` `r`,`tp_access` `a`,`tp_node` `n` WHERE  (  r.role_id=1 and r.role_id=a.role_id and a.node_id=n.nid ) [ RunTime:0.001422s ]
+
+---------------------------------------------------------------
+[ 2018-02-16T10:59:23+08:00 ] ::1 ::1 GET /admin/song/songlist
+[ log ] www.music.com/admin/song/songlist [运行时间：0.123105s][吞吐率：8.12req/s] [内存消耗：2,423.63kb] [文件加载：45]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003194s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM tp_song , tp_songtype WHERE  (  song_type=id ) LIMIT 1 [ RunTime:0.042916s ]
+[ sql ] [ SQL ] SELECT * FROM tp_song , tp_songtype WHERE  (  song_type=id ) LIMIT 0,3 [ RunTime:0.000895s ]
+
+---------------------------------------------------------------
+[ 2018-02-16T11:00:34+08:00 ] ::1 ::1 GET /admin/index
+[ log ] www.music.com/admin/index [运行时间：0.276204s][吞吐率：3.62req/s] [内存消耗：2,370.55kb] [文件加载：42]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004771s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_role_user` [ RunTime:0.001423s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_role_user` WHERE  (  user_id=34 ) [ RunTime:0.000608s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_role` [ RunTime:0.001177s ]
+[ sql ] [ SQL ] SELECT `n`.`level`,`n`.`name`,`n`.`ename`,`n`.`pid`,`n`.`nid` FROM `tp_role` `r`,`tp_access` `a`,`tp_node` `n` WHERE  (  r.role_id=1 and r.role_id=a.role_id and a.node_id=n.nid ) [ RunTime:0.001324s ]
+
+---------------------------------------------------------------
+[ 2018-02-16T11:01:34+08:00 ] ::1 ::1 GET /admin/index
+[ log ] www.music.com/admin/index [运行时间：0.345594s][吞吐率：2.89req/s] [内存消耗：2,371.31kb] [文件加载：42]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001993s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_role_user` [ RunTime:0.001074s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_role_user` WHERE  (  user_id=34 ) [ RunTime:0.000704s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_role` [ RunTime:0.001872s ]
+[ sql ] [ SQL ] SELECT `n`.`level`,`n`.`name`,`n`.`ename`,`n`.`pid`,`n`.`nid` FROM `tp_role` `r`,`tp_access` `a`,`tp_node` `n` WHERE  (  r.role_id=1 and r.role_id=a.role_id and a.node_id=n.nid ) [ RunTime:0.000692s ]
+
+---------------------------------------------------------------
+[ 2018-02-16T11:01:45+08:00 ] ::1 ::1 GET /admin/index
+[ log ] www.music.com/admin/index [运行时间：0.283082s][吞吐率：3.53req/s] [内存消耗：2,371.32kb] [文件加载：42]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001706s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_role_user` [ RunTime:0.000974s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_role_user` WHERE  (  user_id=34 ) [ RunTime:0.000858s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_role` [ RunTime:0.003415s ]
+[ sql ] [ SQL ] SELECT `n`.`level`,`n`.`name`,`n`.`ename`,`n`.`pid`,`n`.`nid` FROM `tp_role` `r`,`tp_access` `a`,`tp_node` `n` WHERE  (  r.role_id=1 and r.role_id=a.role_id and a.node_id=n.nid ) [ RunTime:0.000717s ]
+
+---------------------------------------------------------------
+[ 2018-02-16T11:01:58+08:00 ] ::1 ::1 GET /admin/banner/bannerlist
+[ log ] www.music.com/admin/banner/bannerlist [运行时间：0.095666s][吞吐率：10.45req/s] [内存消耗：2,305.83kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002956s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_suf` [ RunTime:0.002545s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_suf` [ RunTime:0.000826s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_suf` LIMIT 1 [ RunTime:0.000501s ]
+
+---------------------------------------------------------------
+[ 2018-02-16T11:02:20+08:00 ] ::1 ::1 GET /admin/index
+[ log ] www.music.com/admin/index [运行时间：3.290590s][吞吐率：0.30req/s] [内存消耗：2,371.24kb] [文件加载：42]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001803s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_role_user` [ RunTime:0.001239s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_role_user` WHERE  (  user_id=34 ) [ RunTime:0.001917s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_role` [ RunTime:0.001971s ]
+[ sql ] [ SQL ] SELECT `n`.`level`,`n`.`name`,`n`.`ename`,`n`.`pid`,`n`.`nid` FROM `tp_role` `r`,`tp_access` `a`,`tp_node` `n` WHERE  (  r.role_id=1 and r.role_id=a.role_id and a.node_id=n.nid ) [ RunTime:0.000651s ]
+
+---------------------------------------------------------------
+[ 2018-02-16T11:02:20+08:00 ] ::1 ::1 GET /admin/index
+[ log ] www.music.com/admin/index [运行时间：0.268630s][吞吐率：3.72req/s] [内存消耗：2,184.45kb] [文件加载：40]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002266s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_role_user` [ RunTime:0.001973s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_role_user` WHERE  (  user_id=34 ) [ RunTime:0.001138s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_role` [ RunTime:0.001976s ]
+[ sql ] [ SQL ] SELECT `n`.`level`,`n`.`name`,`n`.`ename`,`n`.`pid`,`n`.`nid` FROM `tp_role` `r`,`tp_access` `a`,`tp_node` `n` WHERE  (  r.role_id=1 and r.role_id=a.role_id and a.node_id=n.nid ) [ RunTime:0.000744s ]
+
+---------------------------------------------------------------
+[ 2018-02-16T11:02:30+08:00 ] ::1 ::1 GET /admin/index
+[ log ] www.music.com/admin/index [运行时间：0.272546s][吞吐率：3.67req/s] [内存消耗：2,371.27kb] [文件加载：42]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002198s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_role_user` [ RunTime:0.001316s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_role_user` WHERE  (  user_id=34 ) [ RunTime:0.001180s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_role` [ RunTime:0.001146s ]
+[ sql ] [ SQL ] SELECT `n`.`level`,`n`.`name`,`n`.`ename`,`n`.`pid`,`n`.`nid` FROM `tp_role` `r`,`tp_access` `a`,`tp_node` `n` WHERE  (  r.role_id=1 and r.role_id=a.role_id and a.node_id=n.nid ) [ RunTime:0.000782s ]
+
+---------------------------------------------------------------
+[ 2018-02-16T11:02:55+08:00 ] ::1 ::1 GET /admin/index
+[ log ] www.music.com/admin/index [运行时间：0.282938s][吞吐率：3.53req/s] [内存消耗：2,371.24kb] [文件加载：42]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002442s ] mysql:dbname=tp;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_role_user` [ RunTime:0.004534s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_role_user` WHERE  (  user_id=34 ) [ RunTime:0.000711s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_role` [ RunTime:0.001567s ]
+[ sql ] [ SQL ] SELECT `n`.`level`,`n`.`name`,`n`.`ename`,`n`.`pid`,`n`.`nid` FROM `tp_role` `r`,`tp_access` `a`,`tp_node` `n` WHERE  (  r.role_id=1 and r.role_id=a.role_id and a.node_id=n.nid ) [ RunTime:0.000930s ]
+
+---------------------------------------------------------------

@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Au音乐网-mv</title>
+    <link href="/static/index/css/video-js.css" rel="stylesheet">
+
+     <link rel="stylesheet" href="/static/index/css/style2.css">
+<style>
+  body {
+      /* background-color: #191919; */
+  }
+  .m {
+      /* width: 740px; */
+      width: 960px;
+      min-height: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      padding:20px;
+  }
+  #bg_box{
+        /* background:url(/static/index/image/ti3.jpg); */
+        /* background-color:#3A89AA; */
+        background-color:#eee;
+        min-height:800px;
+  }
+</style>
+</head>
+
+<body>
+      {include file="header"}
+<div id="bg_box">
+    <div class="m">
+      {volist name="sel" id="val"}
+      <video id="my-video" class="video-js" controls preload="auto" width="960" min-height="450"
+          poster="{$val.pic}" data-setup="{}">
+        <source src="{$val.url}" type="video/mp4">
+      </video>
+      {/volist}
+    </div>
+    <!--评论留言开始-->
+<div  style="background-color:white;margin:10px auto;margin-bottom:0px;width:960px;min-height:300px;background-color:white;border:1px solid #ccc;min-height:100px;">
+    <p style="font-size:15px;font-family:STsong;text-indent: 30px;margin-top: 10px;">来给这首MV一个评论吧</p>
+    <form method="post" action="/index/index/mvpost?ctype=2&vid={$vid}">
+    <div style="width:100%;background-color:;margin-top: 20px;;">
+      <span style="margin-left:10px;width:70px;height:70px;text-indent: 50px;">
+        <img src="/static/index/image/hc2.jpg" alt="加载失败" width="70px;" style="border-radius: 80%;">
+      </span>
+      <textarea name="content" style="height:70px;width:73%;border:1px solid #D1605A;margin-left:90px;margin-top:3px;border-radius:10px;font-size:20px;">
+
+      </textarea>
+      <input type="submit" name="" style="width:100px;height:30px;background-color:#E85252;color:white;border-radius:10px;margin-left:163px;margin-top:16px;" value="评论">
+
+    </div>
+    </form>
+    <p style="font-size:20px;font-family:STSong;text-indent: 30px;margin-top: 20px;margin-bottom: 20px;">最新评论</p>
+
+
+    {volist name="data" id="val"}
+
+    <div style="width:100%;background-color:;margin-top: 10px;min-height:128px;margin-left:{$val.level*20}px;"  class="comm_list">
+      <div style="margin-left:30px;float:left;width:60px;height:60px;">
+        <img src="{$val.pic}" alt="加载失败" width="50px;" style="border-radius: 80%;">
+      </div>
+      <div name="" style="height:40px;width:60%;border:1px solid #D1605A;margin-left:20px;margin-top:8px;border-radius: 5px;float:left;text-align:;line-height:40px;padding-left:10px;font-size:15px;">{$val.content}
+      </div>
+      <div style="float:left;width:100%;">
+        &emsp;作者：{$val.username}<span style="width:100px;"></span>发表于：{$val.create_time|date="y-m-d h:i:s",###}&emsp;&emsp;&emsp;
+        <!-- 点赞<span><img src="/static/index/image/赞.png" width="30px;"></span>&emsp;&emsp;&emsp; -->
+        <span style="display: none;" id="id">{$val.id}</span>
+        <span style="display: none;" id="id">{$vid}</span>
+        <span>
+          <a class="comment-reply" style="color:red">回复</a>
+        </span> <br>
+          <!-- <input type="text" name="reply" value="" style="border:1px solid #aaa;width:300px;height:50px; display:none;" id="{$val.id}"> -->
+      </div>
+    </div>
+
+    {/volist}
+
+  </div> <!--评论留言结束-->
+
+</div>
+
+
+  <!--尾部开始-->
+    {include file="footer"}
+  <!--尾部结束-->
+  <!-- <link href="/static/index/css/asynctips.css" rel="stylesheet" type="text/css"> -->
+  <!-- <script type="text/javascript" src="/static/index/js/asyncbox.js"></script> -->
+  <script type="text/javascript" src="/static/index/js/bottom.js"></script>
+</body>
+</html>
+  <!--js开始-->
+<!--   <script src="/static/index/js/video.min.js"></script>
+  <script src="http://vjs.zencdn.net/5.19/lang/zh-CN.js"></script>
+  <script type="text/javascript">
+
+        var myPlayer = videojs('my-video');
+        videojs("my-video").ready(function(){
+            var myPlayer = this;
+            myPlayer.play();
+        });
+  </script> -->
+<!--回复-->
+<script src="/static/index/js/jquery-1.11.3.min.js"></script>
+  <script>
+//点击"回复"按钮显示或隐藏回复输入框
+    $('.comment-reply').click(function(){
+      var id = $(this).parent().prev().prev().html();
+      var vid = $(this).parent().prev().html();
+        if($(this).next().length>0)
+        {
+          $(this).next().remove();
+        } else {
+            //添加回复div
+            $('.comment-reply').next().remove();//删除已存在的所有回复div
+            //添加当前回复div
+            var parent_id = $(this).attr("comment_id");//要回复的评论id
+            divhtml = '<div>'+
+                      '<form method="post" action="/index/index/mvpost?vid='+vid+'&id='+id+'">'+
+                        '<input type="text" style="border:1px solid green;width:200px;height:30px;border-radius:5px 0 0 5px;margin-top:10px;" name="content">'+
+                      '<input type="submit" style="border:1px solid green;width:50px;height:32px;margin-top:10px;">'+
+                      '</form>'+
+                      '</div>';
+            $(this).after(divhtml);
+         }
+    });
+
+
+
+
+  </script>
+
+
+
+
+
+
+
+

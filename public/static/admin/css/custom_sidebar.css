@@ -1,0 +1,5 @@
+﻿.side_content { width:110px;}
+.side_gray .side_title { height:32px; width:110px; background:url(../images/custom_service/service_t.gif) 0 0 no-repeat;}
+.side_gray .side_center { padding:5px; width:100px; background:url(../images/custom_service/service_c.gif) 0 0 repeat-y;}
+.side_gray .side_bottom { height:11px; width:110px; background:url(../images/custom_service/service_b.gif) 0 0 no-repeat;}
+.phoneserver { font-size:12px;  }

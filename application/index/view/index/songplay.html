@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Au音乐网</title>
+  <link rel="stylesheet" type="text/css" href="/static/index/css/audio.css">
+
+  <link rel="stylesheet" href="/static/index/css/style2.css">
+
+  <link rel="stylesheet" type="text/css" href="/static/index/css/zaixian.css" />
+<!-- <link rel="Shortcut Icon" href="images/favicon.ico" /> -->
+<script type="text/javascript" src="/static/index/js/modernizr.js"></script>
+
+
+</head>
+<body style="height: 588px">
+{include file="header"}
+
+  <div class="audio-box" style="z-index:20">
+    <div class="audio-container">
+      <div class="audio-cover"></div>
+      <div class="audio-view">
+        <h3 class="audio-title">123</h3>
+        <div class="audio-body">
+          <div class="audio-backs">
+            <div class="audio-this-time">00:00</div>
+            <div class="audio-count-time">00:00</div>
+            <div class="audio-setbacks" style="height: 8px;">
+              <i class="audio-this-setbacks">
+                <span class="audio-backs-btn"></span>
+              </i>
+              <span class="audio-cache-setbacks">
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="audio-btn">
+          <div class="audio-select">
+            <div class="audio-prev"></div>
+            <div class="audio-play"></div>
+            <div class="audio-next"></div>
+            <div class="audio-menu"></div>
+            <div class="audio-volume"></div>
+          </div>
+          <div class="audio-set-volume">
+            <div class="volume-box">
+              <i><span></span></i>
+            </div>
+          </div>
+          <div class="audio-list">
+            <div class="audio-list-head">
+              <p>☺随心听</p>
+              <span class="menu-close">关闭</span>
+            </div>
+            <ul class="audio-inline">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div style="width:100%;background-color:#F6F6F6;">
+    <div id="song" style="width:1182px;margin:0 auto;height:350px;background:;text-align:center;font-size:30px;color:;font-weight:bold;font-family:sans-serif;line-height:50px;margin-top:30px;">
+          <div style="float:left;margin-left:px;">
+            <img src="{$sel[0]['pic']}" style="width:500px;height:300px;float:left;padding:20px;">
+          </div>
+          <br>
+          <div style="background-color:;float:left;width:400px;padding-left: 35px;">
+          <li style="width:500px;text-align:left;margin-left:60px;">歌曲：<a style="color:red">{$sel[0]['sname']}</a> <br></li>
+          <li style="width:500px;text-align:left;margin-left:60px;">歌手：<a style="color:red">{$sel[0]['singer']}</a> <br></li>
+          <li style="width:500px;text-align:left;margin-left:60px;"><a href="/index/index/collectsong?sid={$sel[0]['sid']}" style="color:black">收藏此单曲</a></li>
+          </div>
+            <!--分享开始-->
+  <div style="width:px;margin:0 auto;margin-top:80px;margin-bottom:10px;float:left;margin-left:50px;">
+<div class="bshare-custom icon-medium-plus"><a title="分享到" href="http://www.bShare.cn/" id="bshare-shareto" class="bshare-more">分享到</a><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/button.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><a class="bshareDiv" onclick="javascript:return false;"></a><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+  </div>
+
+  <!--分享结束-->
+        </div>
+
+
+    <!--在线首发 开始-->
+    <div class="new_songs new_common">
+        <!--标题 开始-->
+        <div class="new_songs_title new_common_title">
+
+        <span style="color:red">最新推荐</span>
+        </div>
+        <!--标题 结束-->
+        <!--第1页-->
+        <ul class="show">
+        {volist name="hot" id="val"}
+            <li class="albumBox">
+                <div class="album">
+                    <p>
+                        <a href="/index/index/songplay?sid={$val.sid}">
+                          <img width="220" height="220" src="{$val.pic}" class="attachment-220x220 wp-post-image"  />
+                        <span><em>{$val.sname}</em><em>{$val.singer}</em><i></i></span>
+                        </a>
+                    </p>
+                    <a href="/index/index/songplay?sid={$val.sid}"><span>歌曲</span><strong>{$val.sname}</strong></a>
+                    <a href="/index/index/songplay?sid={$val.sid}"><span>试听</span><strong>{$val.view_num}<em></em></strong></a>
+                </div>
+            </li>
+            <div class="url2" style="display:none" >
+              {$val.sid}
+            </div>
+        {/volist}
+        </ul>
+
+  </div><br>
+
+    <!--在线首发 结束-->
+
+
+
+
+
+ <div style="min-height:400px;width:100%;background-color:;margin:0 auto;padding:0px;">
+    {volist name="sel" id="val"}
+    <div id="url" style="display: none;">
+        {$val.url}
+    </div>
+    <div id="pic" style="display:none">
+        {$val.pic}
+    </div>
+    <div id="name" style="display:none">
+        {$val.sname}
+    </div>
+    {/volist}
+
+    <!--评论留言开始-->
+    <div  style="background-color:white;margin:10px auto;margin-bottom:0px;width:1182px;min-height:300px;background-color:white;border:1px solid #ccc">
+    <p style="font-size:20px;font-family:STsong;text-indent: 30px;margin-top: 10px;">来给这首歌一个评论吧</p>
+    <form method="post" action="/index/index/songpost?ctype=0&sid={$sid}">
+    <div style="width:100%;background-color:;margin-top: 10px;">
+      <span style="margin-left:10px;text-indent: 50px;"><img src="/static/index/image/hc2.jpg" width="70px;" style="border-radius: 80%;"></span>
+      <textarea name="content" style="height:70px;width:73%;border:1px solid #D1605A;margin-left:20px;border-radius:5px;font-size:20px;">
+
+      </textarea>
+      <input type="submit" name="" style="width:100px;height:30px;background-color:#E85252;color:white;border-radius:10px;margin-left:163px;margin-top:16px;" value="评论">
+
+    </div>
+    </form>
+    <p style="font-size:20px;font-family:STSong;text-indent: 30px;margin-top: 10px;">最新评论</p>
+
+
+    {volist name="post" id="val"}
+    <div style="width:100%;background-color:;margin-top: 10px;min-height:100px;">
+      <div style="margin-left:10px;float:left;width:65px;height:65px;">
+        <img src="{$val.pic}" alt="加载失败" width="60px;" height="60px">
+      </div>
+      <div name="" style="height:40px;width:60%;border:1px solid #D1605A;margin-left:20px;margin-top:15px;border-radius: 5px;float:left;text-align:;line-height:40px;font-size:20px;">{$val.content}
+      </div>
+      <div style="float:left;width:100%;">
+        &emsp;作者：{$val.username}<span style="width:100px;"></span>发表于：{$val.create_time|date="y-m-d h:i:s",###}&emsp;&emsp;&emsp;
+		<!-- <span><img src="/static/index/image/赞.png" width="30px;">{$val.likes}</span> -->
+		</div>
+    </div>
+    {/volist}
+
+  </div> <!--评论留言结束-->
+
+  </div>
+
+<!--站位-->
+<!-- <div style="width:100%;background-color:#F6F6F6;height:100px;">
+
+</div> -->
+<!--结束站位-->
+
+<!--返回顶部-->
+<link href="/static/index/css/asynctips.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/static/index/js/asyncbox.js"></script>
+<script type="text/javascript" src="/static/index/js/bottom.js"></script>
+<!--返回顶部结束-->
+
+
+<script type="text/javascript" src="/static/index/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/index/js/audio.js"></script>
+<script type="text/javascript">
+$(function(){
+  var url = $('#url').html();
+  var pic = $('#pic').html();
+  var name = $('#name').html();
+
+  var song = [
+    {
+      'cover' : pic,
+      'src' : url,
+      'title' :name
+    },
+    {
+      'cover' : 'images/cover2.jpg',
+      'src' : 'http://p3nictroy.bkt.clouddn.com/Wake.mp3',
+      'title' : 'wake-邵凯旋'
+    },
+    {
+      'cover' : 'images/cover5.jpg',
+      'src' : 'http://p3nictroy.bkt.clouddn.com/%E5%91%A8%E7%AC%94%E7%95%85%20-%20%E6%9C%80%E7%BE%8E%E7%9A%84%E6%9C%9F%E5%BE%85.mp3',
+      'title' : '最美的期待-周笔畅'
+    },
+    {
+      'cover' : 'images/cover3.jpg',
+      'src' : 'http://p3nictroy.bkt.clouddn.com/%E5%91%A8%E6%9D%B0%E4%BC%A6%20-%20%E7%94%9C%E7%94%9C%E7%9A%84.mp3',
+      'title' : '甜甜的-周杰伦'
+    },
+    {
+      'cover' : 'images/cover1.jpg',
+      'src' : 'http://p3nictroy.bkt.clouddn.com/%E5%91%A8%E6%9D%B0%E4%BC%A6%20-%20%E6%99%B4%E5%A4%A9.mp3',
+      'title' : '晴天 - 周杰伦'
+    }
+  ];
+
+  var audioFn = audioPlay({
+    song : song,
+    autoPlay : true  //是否立即播放第一首，autoPlay为true且song为空，会alert文本提示并退出
+  });
+
+  /* 向歌单中添加新曲目，第二个参数true为新增后立即播放该曲目，false则不播放 */
+  // audioFn.newSong({
+  //   'cover' : 'images/cover4.jpg',
+  //   'src' : 'http://p3fczj25n.bkt.clouddn.com/%E9%87%91%E7%8E%9F%E5%B2%90%20-%20%E5%B2%81%E6%9C%88%E7%A5%9E%E5%81%B7.mp3',
+  //   'title' : '极乐净土 - GARNiDELiA'
+  // },false);
+
+  /* 暂停播放 */
+  //audioFn.stopAudio();
+
+  /* 开启播放 */
+  //audioFn.playAudio();
+
+  /* 选择歌单中索引为3的曲目(索引是从0开始的)，第二个参数true立即播放该曲目，false则不播放 */
+  //audioFn.selectMenu(3,true);
+
+  /* 查看歌单中的曲目 */
+  //console.log(audioFn.song);
+
+  /* 当前播放曲目的对象 */
+  //console.log(audioFn.audio);
+});
+</script>
+
+
+
+<script>
+
+</script>
+</body>
+</html>

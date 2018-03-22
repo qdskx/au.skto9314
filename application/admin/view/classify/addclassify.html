@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>
+            X-admin v1.0
+        </title>
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="../../static/admin/css/x-admin.css" media="all">
+        <script src='https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190'></script>
+    </head>
+    <body>
+        <div class="x-body">
+            <form class="layui-form">
+                <div class="layui-form-item">
+                    <label for="level-name" class="layui-form-label">
+                        <span class="x-red">*</span>分类名字
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="classname" required="" lay-verify="required" 
+                        autocomplete="off"  class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="level-kiss" class="layui-form-label">
+                        父节点
+                    </label>
+                    <div class="layui-input-inline">
+                        <select name="pid" id="" >
+                            <option value="0">根节点</option>
+                            {volist name='parent' id='value'}
+                            <option value="{$value['cid']}"><p style="padding-left: 10px">{$value['classname']}</p></option> 
+                            {/volist}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="L_repass" class="layui-form-label">
+                    </label>
+                    <button  class="layui-btn" lay-filter="save" lay-submit="" id='btn'>
+                        保存
+                    </button>
+                </div>
+            </form>
+        </div>
+        <script src="../../static/admin/lib/layui/layui.js" charset="utf-8">
+        </script>
+        <script src="../../static/admin/js/x-layui.js" charset="utf-8">
+        </script>
+        <script>
+            layui.use(['form','layer'], function(){
+                $ = layui.jquery;
+              var form = layui.form()
+              ,layer = layui.layer;
+            
+
+            $(function () {
+                $('#btn').click(function () {
+
+                    //读取input框中的value值
+                    var classname = $('[name=classname]').val();
+                    var pid = $('[name=pid]').val();
+
+                    $.ajax({
+                        type:'post',
+                        url:'/admin/classify/doaddclassify',
+                        data:{classname:classname,pid:pid},
+                        dataType:'json', 
+                        success:success
+                    });
+                    return false;
+                    
+                });
+                function success(data)
+                {
+                    var obj = JSON.parse(data);
+
+                    if(obj['state'] == 1)
+                    {
+                        layer.alert('添加类别成功', {icon: 6});
+
+                    }else if(obj['state'] == 2)
+                    {
+                        layer.alert('分类名不能为空', {icon: 2});
+                    }else if(obj['state'] == 3)
+                    {
+                        layer.alert('分类名已存在', {icon: 2});
+                    }else
+                    {
+                        layer.alert('添加类别失败', {icon: 2});
+                    }
+                }
+                
+            });
+         
+
+              
+              
+            });
+        </script>
+        <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+    </body>
+
+</html>

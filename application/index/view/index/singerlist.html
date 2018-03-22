@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<title>歌手列表</title>
+<link rel="stylesheet" href="/static/index/css/style.css">
+<script type="text/javascript" src="/static/index/js/jquery.js"></script>
+<script type="text/javascript" src="/static/index/js/common.js"></script>
+<script type="text/javascript">var web_url="/";web_skin="/skin/qt_fb/";$(function() {$("img").lazyload({placeholder : "/skin/qt_fb/images/loading.gif",effect: "fadeIn"});$("#nav_artist").addClass("current");});</script>
+</head>
+<body>
+	<!--头部开始-->
+	{include file="header"}
+	<!--头部结束-->
+	<div class="bg_box">
+	<div class="main">
+	<div class="record_list">
+	<div class="record_lable">
+	<dl>
+	<dt>类别</dt>
+<!-- 	<dd><a href="">华语</a></dd>
+	<dd><a href="">日韩</a></dd>
+	<dd><a href="">欧美</a></dd>
+	<dd><a href="l">mc</a></dd> -->
+
+	</dl>
+	</div>
+	</div>
+	<div class="ian_lists">
+	{volist name="singer" id="val"}
+	<dl><a  href="/index/index/singerinfo?aid={$val.aid}">
+	<dt><img src="{$val.pic}" width="180" height="180"></dt>
+	<dd><span>{$val.singer_name}<em>{$val.province}</em></span></dd></a>
+	</dl>
+	{/volist}
+
+	</div>
+	</div>
+	</div>
+
+
+	<!--尾部开始-->
+		{include file="footer"}
+	<!--尾部结束-->
+  <link href="/static/index/css/asynctips.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="/static/index/js/asyncbox.js"></script>
+  <script type="text/javascript" src="/static/index/js/bottom.js"></script>
+
+
+

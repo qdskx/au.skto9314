@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="renderer" content="webkit">
+<title>AU</title>
+<link rel="stylesheet" href="/static/index/css/style.css">
+<script type="text/javascript" src="/static/index/js/jquery.js"></script>
+<script type="text/javascript" src="/static/index/js/common.js"></script>
+<!-- <script type="text/javascript">var web_url="/";web_skin="/skin/qt_fb/";$(function() {$("#nav_news").addClass("current");});</script> -->
+</head>
+<body>
+
+    <!--头部开始-->
+    {include file="header"}
+    <!--头部结束-->
+
+<div class="bg_box" style="min-height:700px;">
+<div class="main" style="min-height:500px;">
+<div class="news">
+<div class="news_left">
+    <!--<ul class="tag_nav_list">
+    <li><a href="http://sqdemo.x5mp3.com/news/help/1.html">常见问题</a></li>
+    <li><a href="http://sqdemo.x5mp3.com/news/yulebobao/1.html">娱乐播报</a></li>
+    <li><a href="http://sqdemo.x5mp3.com/news/gonggao/1.html">网站公告</a></li>
+    </ul>-->
+<div class="ttitle"><h2><i></i>我的歌曲</h2></div>
+
+
+<ul class="news-list">
+    {if !empty($data)}
+    {volist name="data" id="val"}
+    <form action="/index/index/cancelsong" method="post" accept-charset="utf-8">
+
+
+    <li>
+        <input type="checkbox" name="id[]" value="{$val.sid}">
+        <span class="index"></span>
+        <span><a href="/index/index/songplay?sid={$val.sid}" style="width:300px;display:block;">{$val.sname}</a></span>
+        <span><a   style="width:300px;display:block;margin-left:30px;">{$val.singer}</a></span>
+        <span class="misc-wrapper">
+            <span class="misc-info">
+            <span class="update-time"><a href="/index/index/cancelsong?sid={$val.sid}">删除</a></span>
+            </span>
+        </span>
+    </li>
+    {/volist}
+    {/if}
+    {if !empty($data)}
+    <li>
+        <input type="submit" name="del" value="删除选中" style="background-color: white;">
+    </li>
+    {/if}
+    </form>
+ </ul>
+</div>
+</div>
+</div>
+</div>
+<link href="/index/css/asynctips.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/index/js/asyncbox.js"></script>
+<script type="text/javascript" src="/index/js/bottom.js"></script>
+<!--尾部-->
+    {include file="footer"}
+<!--尾部结束-->
+
+
+</body>
+</html>
+
+
+

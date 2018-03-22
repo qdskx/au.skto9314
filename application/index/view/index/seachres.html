@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="renderer" content="webkit">
+<title>AU</title>
+<link rel="stylesheet" href="/static/index/css/style.css">
+<script type="text/javascript" src="/static/index/js/jquery.js"></script>
+<script type="text/javascript" src="/static/index/js/common.js"></script>
+<!-- <script type="text/javascript">var web_url="/";web_skin="/skin/qt_fb/";$(function() {$("#nav_news").addClass("current");});</script> -->
+</head>
+<body>
+
+	<!--头部开始-->
+	{include file="header"}
+	<!--头部结束-->
+
+<div class="bg_box" style="min-height:700px;">
+<div class="main" style="min-height:500px;">
+<div class="news">
+<div class="news_left">
+	<!--<ul class="tag_nav_list">
+	<li><a href="http://sqdemo.x5mp3.com/news/help/1.html">常见问题</a></li>
+	<li><a href="http://sqdemo.x5mp3.com/news/yulebobao/1.html">娱乐播报</a></li>
+	<li><a href="http://sqdemo.x5mp3.com/news/gonggao/1.html">网站公告</a></li>
+	</ul>-->
+<div class="ttitle"><h2><i></i>搜索</h2></div>
+<form action="/index/index/doseachres" method="post" >
+<div style="margin-left:30px;">
+	<select name="type" style="width:80px;height:25px;">
+		<option>音乐</option>
+		<option>MV</option>
+		<option>歌单</option>
+	</select>
+	<input type="text" name="key" style="border:1px solid #aaa;height:23px;margin-bottom: 3px;">
+	<input type="submit" style="border:1px solid #aaa;height:25px;margin-bottom:3px;width:80px;">
+</div>
+</form>
+
+<ul class="news-list">
+
+	{if !empty($se)}
+	{volist name="se" id="val"}
+	<li>
+		<span class="index"></span>
+		<span><a href="/index/index/songplay?sid={$val.sid}" style="width:300px;display:block;">{$val.sname}</a></span>
+		<span><a   style="width:300px;display:block;margin-left:30px;">{$val.singer}</a></span>
+		<span class="misc-wrapper">
+
+			<span class="misc-info">
+			<span class="update-time">2017-01-04</span>
+			</span>
+		</span>
+	</li>
+	{/volist}
+	{/if}
+
+	{if !empty($se2)}
+	{volist name="se2" id="val"}
+	<li>
+		<span class="index"></span>
+		<span><a href="/index/index/mvplay?vid={$val.vid}"  style="width:300px;display:block;">{$val.vname}</a></span>
+		<span><a style="width:300px;display:block;margin-left:30px;">{$val.vsinger}</a></span>
+		<span class="misc-wrapper">
+
+			<span class="misc-info">
+			<span class="update-time">2017-01-04</span>
+			</span>
+		</span>
+	</li>
+	{/volist}
+	{/if}
+
+	{if !empty($se3)}
+	{volist name="se3" id="val"}
+	<li>
+		<span class="index"></span>
+		<span><a href="/index/index/playlist?pid={$val.pid}"  style="width:300px;display:block;">{$val.pname}</a></span>
+		<span><a  style="width:300px;display:block;margin-left:30px;"></a></span>
+		<span class="misc-wrapper">
+
+			<span class="misc-info">
+			<span class="update-time">2017-01-04</span>
+			</span>
+		</span>
+	</li>
+	{/volist}
+	{/if}
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+<link href="/index/css/asynctips.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/index/js/asyncbox.js"></script>
+<script type="text/javascript" src="/index/js/bottom.js"></script>
+<!--尾部-->
+	{include file="footer"}
+<!--尾部结束-->
+
+
+</body>
+</html>
+
+
+
